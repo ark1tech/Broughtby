@@ -2,8 +2,9 @@
 	// @ts-nocheck
 
 	export let label;
-	export let icon;
+	export let licon;
 	export let href;
+	export let ricon;
 
 	function handleAnchorClick(event) {
 		event.preventDefault();
@@ -18,17 +19,18 @@
 </script>
 
 <div
-	class="w-fit border border-[#24478c] shadow-[0_0_5px_0_#19346a] rounded-lg overflow-clip
+	class="w-fit border border-[#24478c] shadow-[0_0_5px_0_#19346a] rounded-xl overflow-clip
 "
 >
 	<a
-		class=" text-white flex flex-row items-center py-2 px-[0.9rem] gap-[0.6rem]
+		class="font-[500]  tracking-[0.015em] flex flex-row items-center py-[0.5rem] px-[1.2rem] gap-[0.6rem]
 			bg-[#091742] shadow-[inset_0_-8px_20px_#19346a]
 			"
 		on:click={handleAnchorClick}
 		{href}
 	>
-		{@html icon}
+		{@html licon}
 		{label}
+		{@html ricon}
 	</a>
 </div>

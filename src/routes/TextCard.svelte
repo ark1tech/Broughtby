@@ -1,0 +1,32 @@
+<script>
+	// @ts-nocheck
+
+	export let heading;
+	export let content;
+</script>
+
+<div class ="flex-[1_1_0%]">
+	<div class="w-full h-full rounded-[0.75rem] overflow-clip bg-gradient-to-b from-[#ffffff2c] via-[#a2a2a220] to-[#a2a2a200] p-[0.065rem]">
+		<div class="w-full h-full p-10 flex flex-col gap-[1rem] bg-[#19191b] rounded-[0.75rem] ">
+			<h4 class = "w-full h-1/3">{heading}</h4>
+			<p class="w-full">{content}</p>
+		</div>
+	</div>
+</div>
+
+<!-- <div
+	class="w-fit border border-[#24478c] shadow-[0_0_5px_0_#19346a] rounded-xl overflow-clip
+"
+>
+	<a
+		class="font-[500] tracking-[0.015em] flex flex-row items-center py-[0.5rem] px-[1.2rem] gap-[0.6rem]
+			bg-[#091742] shadow-[inset_0_-8px_20px_#19346a]
+			"
+		on:click={handleAnchorClick}
+		{href}
+	>
+		{@html licon}
+		{label}
+		{@html ricon}
+	</a>
+</div> -->

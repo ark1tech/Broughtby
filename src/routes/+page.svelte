@@ -1,34 +1,115 @@
-<script>
+<script lang="ts">
 	// @ts-nocheck
+	import Marquee from './Marquee.svelte';
 	import Button from './Button.svelte';
-	import Univ from '$lib/univ.svg';
+	import TextCard from './TextCard.svelte';
+	import ClickURL from '$lib/click.svg';
+
+	const Right_Arrow = `<svg  xmlns="http://www.w3.org/2000/svg"  width="20"  height="20"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" /></svg>`;
+
 	import * as Accordion from '$lib/components/ui/accordion';
+	// import { gsap } from 'gsap/dist/gsap.js';
+	// import { ScrollTrigger } from 'gsap/dist/ScrollTrigger.js';
+
+	import type { PageData } from './$types.js';
+	import Form from './form.svelte';
+
+	export let data: PageData;
 </script>
 
 <svelte:head>
 	<title>Broughtby</title>
-	<meta name="description" content="CS 132 Pocari" />
+	<meta name="description" content="Broughtby" />
+
+	<meta property="og:title" content="Broughtby" />
+	<meta property="og:type" content="product" />
+	<meta property="og:url" content="https://broughtby.arkimanago.com" />
+	<meta property="og:image" content="$lib/meta.png" />
+
+	<meta property="og:title" content="Broughtby" />
+	<meta property="og:type" content="product" />
+	<meta property="og:url" content="https://broughtby.arkimanago.com" />
+	<meta property="og:image" content="$lib/meta.png" />
+
+	<meta name="twitter:title" content="Broughtby" />
+	<meta name="twitter:description" content="A payment solution built for student org events—no bureaucracy required." />
+	<meta name="twitter:image" content="https://broughtby.arkimanago.com" />
+	<meta name="twitter:card" content="$lib/meta.png" />
 </svelte:head>
 
-<header class="flex flex-col items-center gap-[2rem] pt-[10rem] min-h-[100dvh] w-full">
-	<h1 class="text-white w-fit text-center">
-		Make payments easy <br /> for your <span class="text-[#0052FF]">sponsors</span>
-	</h1>
-	<p class="text-center">
-		A payment solution built for student orgs and their events—no bureaucracy required.
-	</p>
-	<Button icon={''} label={'Join the waitlist'} href={'#overview'} />
+<header class="flex flex-col items-center justify-between pt-[8rem] min-h-[100dvh] w-full">
+	<div class="flex flex-col items-center gap-[2rem] w-full">
+		<h1 class="text-white md:w-[60%] w-[80%] text-center">
+			Make payments easy for your <span class="text-[#0052FF]">sponsors</span>
+		</h1>
+		<p class="text-center">
+			A payment solution built for student org events—no bureaucracy required.
+		</p>
+		<Button licon={''} label={'Join the waitlist'} href={'#overview'} ricon={''} />
+	</div>
+	<div class="flex flex-col items-center pb-[3rem] gap-[2rem]">
+		<h5 class="w-fit text-center">Trusted by top universities in the Philippines</h5>
+		<Marquee />
+	</div>
 </header>
-<section class="w-full flex flex-col items-center gap-[4rem] mb-[10rem]">
-	<h2 class="text-white w-fit text-center">Join orgs from top universities</h2>
+
+<section class="w-full flex flex-col items-center pt-[5rem] gap-[2.5rem]">
+	<h2 class="text-white md:w-[60%] w-[80%] text-center">Your persistent problems,</h2>
+	<div class="flex lg:flex-row flex-col w-full justify-evenly gap-[2rem]">
+		<TextCard
+			heading={"Can't issue official receipts"}
+			content={'Your org needs to be SEC-registered, but that comes with documents and taxes. Too much bureaucracy.'}
+		/>
+		<TextCard
+			heading={'Slow passthrough services'}
+			content={"You partner with an incorporated org to issue receipts, but they haven't replied to your emails in weeks."}
+		/>
+		<TextCard
+			heading={'Supporting payment methods is hard'}
+			content={"The payments are being sent to some member's bank account, or you're collecting cheques from far-away company offices."}
+		/>
+	</div>
+</section>
+
+<section class="w-full flex flex-col items-center justify-center pt-[5rem]">
+	<h2 class="text-white w-fit text-center">
+		now have <span class="text-[#0052FF]">solutions</span>
+	</h2>
 	<div class="gradient-mask-l-60">
-		<div class="marquee gradient-mask-r-60">
-			<img src={Univ} alt="univ" class="marquee__content" />
-			<img src={Univ} alt="univ" aria-hidden="true" class="marquee__content" />
+		<div class="gradient-mask-r-60">
+			<img alt="ClickURL" src={ClickURL} class="w-[800px] h-auto" />
 		</div>
 	</div>
 </section>
-<faq id="faq" class="w-full flex flex-col items-center min-h-[100dvh] gap-[2rem]">
+
+<section class="w-full min-h-[100dvh] flex flex-col items-center mt-[5rem] gap-3">
+	<div class="w-full absolute bg-[#00000031] flex flex-col">
+		<div class="px-[10dvw] p-[6rem] w-full min-h-[50dvh] flex lg:flex-row flex-col gap-10">
+			<div class="lg:w-1/2 w-full flex flex-col gap-9">
+				<h3 class="w-full">
+					Process payments <span class="drop-shadow-[0_4px_10px_#0052FFEE]">instantly</span>
+				</h3>
+				<p class="w-full">
+					We'll handle the invoices, payment processing, official receipts, and anything else your
+					sponsors need to have a hassle-free, on-the-books transaction.
+				</p>
+			</div>
+		</div>
+		<div class="px-[10dvw] p-[6rem] w-full min-h-[50dvh] flex lg:flex-row flex-col gap-10">
+			<div class="lg:w-1/2 w-full flex flex-col gap-9">
+				<h3 class="w-full">
+					Customize your <span class="drop-shadow-[0_4px_10px_#0052FFEE]">campaign page</span>
+				</h3>
+				<p class="w-full">
+					Create a professional & sleek campaign page with an easily shareable short-link. Show your
+					sponsors you mean business.
+				</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<faq id="faq" class="w-full flex flex-col items-center pt-[5rem] min-h-[100dvh] gap-[2rem]">
 	<h2 class="text-white w-fit text-center">FAQs</h2>
 
 	<Accordion.Root class="w-full sm:max-w-[70%] text-white">
@@ -53,7 +134,7 @@
 				><p class="w-fit">
 					You can customize a shortlink URL to point directly to your campaign website. It'll look
 					like this: <span class="font-['JetBrains_Mono'] bg-[#3c3c3c86]"
-						>broughtby.us/yourevent</span
+						>yourevent.broughtby.us/</span
 					>
 				</p></Accordion.Content
 			>
@@ -98,3 +179,59 @@
 		</Accordion.Item>
 	</Accordion.Root>
 </faq>
+
+<section id="contact" class="w-full min-h-[100dvh] flex flex-col items-center mt-[5rem]">
+	<div class="w-screen h-[75dvh] left-0 bg-[#00000031] flex flex-col">
+		<div
+			class="px-[10dvw] p-[6rem] w-full min-h-[50dvh] flex lg:flex-row gap-10 flex-col justify-between"
+		>
+			<div class="lg:w-[50%] w-full flex flex-col gap-9">
+				<h2 class="text-white w-full text-left">
+					Market to your event's <span class="text-[#0052FF]">full potential</span>
+				</h2>
+				<p class="w-full">
+					Be the first in line when we launch Broughtby—the only tool you need to convince potential
+					sponsors that you'll deliver.
+				</p>
+			</div>
+			<Form data={data.form} />
+		</div>
+	</div>
+	<footer
+		class="w-screen h-[25dvh] px-[10dvw] py-[3rem] bg-[#00000058] flex lg:flex-row flex-col items-center justify-evenly"
+	>
+		<div class="flex flex-col gap-3 items-center">
+			<p class="text-sm w-full text-center">Biz Dev & Operations</p>
+			<div class="flex flex-col gap-1">
+				<h5 class="w-full text-center">Paolo De los Santos</h5>
+				<a
+					class="w-full text-center font-normal inline_url"
+					href="https://www.linkedin.com/in/paolodelossantos"
+					target="__blank">@paolodelossantos</a
+				>
+			</div>
+		</div>
+		<div class="flex flex-col gap-3 items-center">
+			<p class="text-sm w-full text-center">Tech & Product</p>
+			<div class="flex flex-col gap-1">
+				<h5 class="w-full text-center">Jose Kristian Resabal</h5>
+				<a
+					class="w-full text-center font-normal inline_url"
+					href="https://www.linkedin.com/in/jkresabal"
+					target="__blank">@jkresabal</a
+				>
+			</div>
+		</div>
+		<div class="flex flex-col gap-3 items-center">
+			<p class="text-sm w-full">Design & Experience</p>
+			<div class="flex flex-col gap-1">
+				<h5 class="w-full text-center">Arki Mañago</h5>
+				<a
+					class="w-full text-center font-normal inline_url"
+					href="https://www.linkedin.com/in/ark1tech"
+					target="__blank">@ark1tech</a
+				>
+			</div>
+		</div>
+	</footer>
+</section>
