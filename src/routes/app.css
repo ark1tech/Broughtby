@@ -155,7 +155,7 @@ input:focus::placeholder {
 	h2 {
 		font-family: 'Instrument Sans';
 		font-weight: 500;
-		font-size: 1.5rem;
+		font-size: 2rem;
 		line-height: 1;
 	}
 }

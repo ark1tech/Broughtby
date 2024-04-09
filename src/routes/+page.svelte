@@ -30,9 +30,14 @@
 	<meta property="og:type" content="product" />
 	<meta property="og:url" content="https://broughtby.arkimanago.com" />
 	<meta property="og:image" content="$lib/meta.png" />
+	<meta property="og:image:width" content="1432" />
+	<meta property="og:image:height" content="753" />
 
 	<meta name="twitter:title" content="Broughtby" />
-	<meta name="twitter:description" content="A payment solution built for student org events—no bureaucracy required." />
+	<meta
+		name="twitter:description"
+		content="A payment solution built for student org events—no bureaucracy required."
+	/>
 	<meta name="twitter:image" content="https://broughtby.arkimanago.com" />
 	<meta name="twitter:card" content="$lib/meta.png" />
 </svelte:head>
@@ -180,8 +185,8 @@
 	</Accordion.Root>
 </faq>
 
-<section id="contact" class="w-full min-h-[100dvh] flex flex-col items-center mt-[5rem]">
-	<div class="w-screen h-[75dvh] left-0 bg-[#00000031] flex flex-col">
+<section id="contact" class="w-full min-h-[100dvh] flex  flex-col items-center mt-[5rem]">
+	<div class="w-screen  bg-[#00000031] flex flex-col flex-grow">
 		<div
 			class="px-[10dvw] p-[6rem] w-full min-h-[50dvh] flex lg:flex-row gap-10 flex-col justify-between"
 		>
@@ -198,9 +203,9 @@
 		</div>
 	</div>
 	<footer
-		class="w-screen h-[25dvh] px-[10dvw] py-[3rem] bg-[#00000058] flex lg:flex-row flex-col items-center justify-evenly"
+		class="w-screen  px-[10dvw] py-[3rem] bg-[#00000058] flex lg:flex-row flex-col items-center justify-evenly gap-5"
 	>
-		<div class="flex flex-col gap-3 items-center">
+		<div class="flex flex-col gap-2 items-center">
 			<p class="text-sm w-full text-center">Biz Dev & Operations</p>
 			<div class="flex flex-col gap-1">
 				<h5 class="w-full text-center">Paolo De los Santos</h5>
@@ -211,7 +216,7 @@
 				>
 			</div>
 		</div>
-		<div class="flex flex-col gap-3 items-center">
+		<div class="flex flex-col gap-2 items-center">
 			<p class="text-sm w-full text-center">Tech & Product</p>
 			<div class="flex flex-col gap-1">
 				<h5 class="w-full text-center">Jose Kristian Resabal</h5>
@@ -222,7 +227,7 @@
 				>
 			</div>
 		</div>
-		<div class="flex flex-col gap-3 items-center">
+		<div class="flex flex-col gap-2 items-center">
 			<p class="text-sm w-full">Design & Experience</p>
 			<div class="flex flex-col gap-1">
 				<h5 class="w-full text-center">Arki Mañago</h5>
