@@ -3,7 +3,7 @@
 	import Marquee from './Marquee.svelte';
 	import Button from './Button.svelte';
 	import TextCard from './TextCard.svelte';
-	import ClickURL from '$lib/click.svg';
+	import ClickURL from '$lib/click3.svg';
 
 	const Right_Arrow = `<svg  xmlns="http://www.w3.org/2000/svg"  width="20"  height="20"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" /></svg>`;
 
@@ -24,12 +24,12 @@
 	<meta property="og:title" content="Broughtby" />
 	<meta property="og:type" content="product" />
 	<meta property="og:url" content="https://broughtby.arkimanago.com" />
-	<meta property="og:image" content="../lib/meta.png" />
+	<meta property="og:image" content="./meta.png" />
 
 	<meta property="og:title" content="Broughtby" />
 	<meta property="og:type" content="product" />
 	<meta property="og:url" content="https://broughtby.arkimanago.com" />
-	<meta property="og:image" content="../lib/meta.png" />
+	<meta property="og:image" content="./meta.png" />
 	<meta property="og:image:width" content="1432" />
 	<meta property="og:image:height" content="753" />
 
@@ -42,7 +42,9 @@
 	<meta name="twitter:card" content="../lib/meta.png" />
 </svelte:head>
 
-<header class="flex flex-col items-center justify-between pt-[8rem] min-h-[100dvh] w-full">
+<header
+	class="flex flex-col items-center justify-between gap-[3rem] pt-[8rem] min-h-[100dvh] w-full"
+>
 	<div class="flex flex-col items-center gap-[2rem] w-full">
 		<h1 class="text-white md:w-[60%] w-[80%] text-center">
 			Make payments easy for your <span class="text-[#0052FF]">sponsors</span>
@@ -59,7 +61,7 @@
 </header>
 
 <section class="w-full flex flex-col items-center pt-[5rem] gap-[2.5rem]">
-	<h2 class="text-white md:w-[60%] w-[80%] text-center">Your persistent problems,</h2>
+	<h2 class="text-white md:w-[60%] w-[80%] text-center">Your persistent problems</h2>
 	<div class="flex lg:flex-row flex-col w-full justify-evenly gap-[2rem]">
 		<TextCard
 			heading={"Can't issue official receipts"}
@@ -76,20 +78,22 @@
 	</div>
 </section>
 
-<section class="w-full flex flex-col items-center justify-center pt-[5rem]">
+<section class="w-full flex flex-col items-center justify-center p-[5rem]">
 	<h2 class="text-white w-fit text-center">
 		now have <span class="text-[#0052FF]">solutions</span>
 	</h2>
-	<div class="gradient-mask-l-60">
-		<div class="gradient-mask-r-60">
+	<div class="gradient-mask-l-40">
+		<div class="gradient-mask-r-80 relative">
 			<img alt="ClickURL" src={ClickURL} class="w-[800px] h-auto" />
 		</div>
 	</div>
 </section>
 
-<section class="w-full min-h-[100dvh] flex flex-col items-center mt-[5rem] gap-3">
-	<div class="w-full absolute bg-[#00000031] flex flex-col">
-		<div class="px-[10dvw] p-[6rem] w-full min-h-[50dvh] flex lg:flex-row flex-col gap-10">
+<section class="w-full min-h-[100dvh] flex flex-col items-center">
+	<div class="w-screen bg-[#00000031] flex flex-col flex-grow">
+		<div
+			class="px-[10dvw] py-[3rem] w-full min-h-[50dvh] flex lg:flex-row gap-10 flex-col justify-between items-center"
+		>
 			<div class="lg:w-1/2 w-full flex flex-col gap-9">
 				<h3 class="w-full">
 					Process payments <span class="drop-shadow-[0_4px_10px_#0052FFEE]">instantly</span>
@@ -99,8 +103,11 @@
 					sponsors need to have a hassle-free, on-the-books transaction.
 				</p>
 			</div>
+			<div></div>
 		</div>
-		<div class="px-[10dvw] p-[6rem] w-full min-h-[50dvh] flex lg:flex-row flex-col gap-10">
+		<div
+			class="px-[10dvw] py-[3rem]  w-full min-h-[50dvh] flex lg:flex-row gap-10 flex-col justify-between items-center"
+		>
 			<div class="lg:w-1/2 w-full flex flex-col gap-9">
 				<h3 class="w-full">
 					Customize your <span class="drop-shadow-[0_4px_10px_#0052FFEE]">campaign page</span>
@@ -110,11 +117,12 @@
 					sponsors you mean business.
 				</p>
 			</div>
+			<div></div>
 		</div>
 	</div>
 </section>
 
-<faq id="faq" class="w-full flex flex-col items-center pt-[5rem] min-h-[100dvh] gap-[2rem]">
+<faq id="faq" class="w-full flex flex-col items-center pt-[11rem] min-h-[100dvh] gap-[2rem]">
 	<h2 class="text-white w-fit text-center">FAQs</h2>
 
 	<Accordion.Root class="w-full sm:max-w-[70%] text-white">
@@ -185,10 +193,10 @@
 	</Accordion.Root>
 </faq>
 
-<section id="contact" class="w-full min-h-[100dvh] flex flex-col items-center mt-[5rem]">
-	<div class="w-screen bg-[#00000031] flex flex-col flex-grow">
+<section id="contact" class="w-full min-h-[100dvh] flex flex-col items-center">
+	<div class="w-screen bg-[#00000031] flex flex-col flex-grow pt-[11rem] pb-[3rem]">
 		<div
-			class="px-[10dvw] p-[6rem] w-full min-h-[50dvh] flex lg:flex-row gap-10 flex-col justify-between"
+			class="px-[10dvw] w-full min-h-[50dvh] flex lg:flex-row gap-10 flex-col justify-between"
 		>
 			<div class="lg:w-[50%] w-full flex flex-col gap-9">
 				<h2 class="text-white w-full text-left">
@@ -202,41 +210,45 @@
 			<Form data={data.form} />
 		</div>
 	</div>
-	<footer
-		class="w-screen px-[10dvw] py-[3rem] bg-[#00000058] flex lg:flex-row flex-col items-center justify-evenly gap-5"
-	>
-		<div class="flex flex-col gap-2 items-center">
-			<p class="text-sm w-full text-center">Biz Dev & Operations</p>
-			<div class="flex flex-col gap-1">
-				<h5 class="w-full text-center">Paolo De los Santos</h5>
-				<a
-					class="w-full text-center font-normal inline_url"
-					href="https://www.linkedin.com/in/paolodelossantos"
-					target="__blank">@paolodelossantos</a
-				>
-			</div>
+	<div class="gradient-mask-l-60 ">
+		<div class="gradient-mask-r-60">
+			<footer
+				class="w-screen px-[10dvw] py-[3rem] bg-[#00000031] flex lg:flex-row flex-col items-center justify-evenly gap-5 border-t-[0.5px] border-[#e7e7e767]"
+			>
+				<div class="flex flex-col gap-2 items-center z-2">
+					<p class="text-sm w-full text-center">Biz Dev & Operations</p>
+					<div class="flex flex-col gap-1">
+						<h5 class="w-full text-center">Paolo De los Santos</h5>
+						<a
+							class="w-full text-center font-normal inline_url"
+							href="https://www.linkedin.com/in/paolodelossantos"
+							target="__blank">@paolodelossantos</a
+						>
+					</div>
+				</div>
+				<div class="flex flex-col gap-2 items-center">
+					<p class="text-sm w-full text-center">Tech & Product</p>
+					<div class="flex flex-col gap-1">
+						<h5 class="w-full text-center">Jose Kristian Resabal</h5>
+						<a
+							class="w-full text-center font-normal inline_url"
+							href="https://www.linkedin.com/in/jkresabal"
+							target="__blank">@jkresabal</a
+						>
+					</div>
+				</div>
+				<div class="flex flex-col gap-2 items-center">
+					<p class="text-sm w-full">Design & Experience</p>
+					<div class="flex flex-col gap-1">
+						<h5 class="w-full text-center">Arki Mañago</h5>
+						<a
+							class="w-full text-center font-normal inline_url"
+							href="https://www.linkedin.com/in/ark1tech"
+							target="__blank">@ark1tech</a
+						>
+					</div>
+				</div>
+			</footer>
 		</div>
-		<div class="flex flex-col gap-2 items-center">
-			<p class="text-sm w-full text-center">Tech & Product</p>
-			<div class="flex flex-col gap-1">
-				<h5 class="w-full text-center">Jose Kristian Resabal</h5>
-				<a
-					class="w-full text-center font-normal inline_url"
-					href="https://www.linkedin.com/in/jkresabal"
-					target="__blank">@jkresabal</a
-				>
-			</div>
-		</div>
-		<div class="flex flex-col gap-2 items-center">
-			<p class="text-sm w-full">Design & Experience</p>
-			<div class="flex flex-col gap-1">
-				<h5 class="w-full text-center">Arki Mañago</h5>
-				<a
-					class="w-full text-center font-normal inline_url"
-					href="https://www.linkedin.com/in/ark1tech"
-					target="__blank">@ark1tech</a
-				>
-			</div>
-		</div>
-	</footer>
+	</div>
 </section>
