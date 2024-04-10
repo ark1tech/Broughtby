@@ -27,12 +27,12 @@
 
 	<meta property="og:title" content="Broughtby" />
 	<meta property="og:type" content="product" />
-	<meta property="og:url" content="https://broughtby.arkimanago.com" />
+	<meta property="og:url" content="https://broughtby.us" />
 	<meta property="og:image" content="./meta.png" />
 
 	<meta property="og:title" content="Broughtby" />
 	<meta property="og:type" content="product" />
-	<meta property="og:url" content="https://broughtby.arkimanago.com" />
+	<meta property="og:url" content="https://broughtby.us" />
 	<meta property="og:image" content="./meta.png" />
 	<meta property="og:image:width" content="1432" />
 	<meta property="og:image:height" content="753" />
@@ -42,7 +42,7 @@
 		name="twitter:description"
 		content="A payment solution built for student org events—no bureaucracy required."
 	/>
-	<meta name="twitter:image" content="https://broughtby.arkimanago.com" />
+	<meta name="twitter:image" content="https://broughtby.us" />
 	<meta name="twitter:card" content="../lib/meta.png" />
 </svelte:head>
 
