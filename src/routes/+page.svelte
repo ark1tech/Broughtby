@@ -5,6 +5,7 @@
 	import TextCard from './TextCard.svelte';
 	import ClickURL from '$lib/click.png';
 	import Receipt from '$lib/receipt.svg';
+	import Connect from '$lib/connect.svg';
 	import Slow from '$lib/zzz.svg';
 	import Puzzle from '$lib/mood-puzzled.svg';
 	import Form from './form.svelte';
@@ -91,20 +92,28 @@
 		now have <span class="text-[#0052FF]">solutions</span>
 	</h2>
 </section>
-
-<section class="w-full min-h-[100dvh] flex flex-col items-center relative gap-4 pt-[1rem]">
-	<div class="absolute z-0 gradient-mask-t-70 w-screen h-full">
+<section class="w-full min-h-[100dvh] flex flex-col items-center relative gap-4 justify-start">
+	<div class="absolute z-0 gradient-mask-t-70 w-screen h-full top-[2rem]">
 		<div class="gradient-mask-b-70 w-full h-full">
 			<div class="w-full h-full flex flex-col flex-grow bg-[url('$lib/bg3.svg')] bg-repeat"></div>
 		</div>
 	</div>
-	<div class="relative z-1 gradient-mask-l-40">
-		<div class="gradient-mask-r-90">
-			<img alt="ClickURL" src={ClickURL} class="w-[900px] lg:min-w-[20dvw] min-w-[80dvw] h-auto" />
+	<div class="relative z-1 flex flex-col items-center justify-start gap-0">
+		<div class="w-full flex flex-col items-center mt-[30px]">
+			<img alt="" src={Connect} class="h-auto w-[20px]" />
+		</div>
+		<div class="relative z-1 gradient-mask-l-40">
+			<div class="gradient-mask-r-90">
+				<img
+					alt="ClickURL"
+					src={ClickURL}
+					class="w-[900px] lg:min-w-[20dvw] min-w-[80dvw] h-auto mt-[-1rem]"
+				/>
+			</div>
 		</div>
 	</div>
 	<div
-		class="relative z-1 py-[2rem] w-full min-h-[20dvh] flex lg:flex-col gap-0 flex-col justify-between items-center"
+		class="relative z-1 py-[2rem] w-full min-h-[25dvh] flex lg:flex-col gap-0 flex-col justify-start items-center"
 	>
 		<div class="lg:w-3/4 w-full flex flex-col gap-6">
 			<h3 class="w-full">
@@ -117,7 +126,7 @@
 		</div>
 	</div>
 	<div
-		class="relative z-1 py-[2rem] w-full min-h-[20dvh] flex lg:flex-col gap-10 flex-col justify-between items-center"
+		class="relative z-1 pt-[2rem] w-full min-h-[25dvh] flex lg:flex-col gap-10 flex-col justify-start items-center"
 	>
 		<div class="lg:w-3/4 w-full flex flex-col gap-6">
 			<h3 class="w-full">
