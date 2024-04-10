@@ -4,21 +4,22 @@
 	import Button from './Button.svelte';
 	import TextCard from './TextCard.svelte';
 	import ClickURL from '$lib/click.png';
-	import BGFooter from '$lib/bg.svg';
 	import Receipt from '$lib/receipt.svg';
 	import Slow from '$lib/zzz.svg';
 	import Puzzle from '$lib/mood-puzzled.svg';
+	import Form from './form.svelte';
 
 	const Right_Arrow = `<svg  xmlns="http://www.w3.org/2000/svg"  width="20"  height="20"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" /></svg>`;
 
 	import * as Accordion from '$lib/components/ui/accordion';
-	// import { gsap } from 'gsap/dist/gsap.js';
-	// import { ScrollTrigger } from 'gsap/dist/ScrollTrigger.js';
+	import { gsap } from 'gsap/dist/gsap.js';
+	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger.js';
 
 	import type { PageData } from './$types.js';
-	import Form from './form.svelte';
 
 	export let data: PageData;
+
+	gsap.registerPlugin(ScrollTrigger);
 </script>
 
 <svelte:head>
@@ -64,8 +65,10 @@
 	</div>
 </header>
 
-<section class="w-full min-h-[90dvh] flex flex-col items-center pt-[5rem] gap-[3rem] justify-between">
-	<h2 class="text-white md:w-[60%] w-[80%] text-center">Your problems...</h2>
+<section
+	class="w-full min-h-[90dvh] flex flex-col items-center pt-[5rem] gap-[3rem] justify-between"
+>
+	<h2 class="text-white md:w-[60%] w-[80%] text-center">Your persistent problems</h2>
 	<div class="flex flex-grow lg:flex-row flex-col w-full justify-evenly gap-[2rem]">
 		<TextCard
 			src={Receipt}
@@ -89,11 +92,9 @@
 </section>
 
 <section class="w-full min-h-[100dvh] flex flex-col items-center relative gap-4 pt-[1rem]">
-	<div class="absolute z-0 top-5 h-[100dvh] gradient-mask-t-70 w-screen">
+	<div class="absolute z-0 gradient-mask-t-70 w-screen h-full">
 		<div class="gradient-mask-b-70 w-full h-full">
-			<div
-				class="w-full h-full flex flex-col flex-grow bg-[url('$lib/bg2.svg')] bg-blend-overlay"
-			></div>
+			<div class="w-full h-full flex flex-col flex-grow bg-[url('$lib/bg3.svg')] bg-repeat"></div>
 		</div>
 	</div>
 	<div class="relative z-1 gradient-mask-l-40">
@@ -132,9 +133,9 @@
 </section>
 
 <faq id="faq" class="w-full flex flex-col items-center pt-[11rem] min-h-[100dvh] gap-[2rem]">
-	<h2 class="text-white w-fit text-center">FAQs</h2>
+	<h2 class="text-white w-fit text-center">Frequently Asked Questions</h2>
 
-	<Accordion.Root class="w-full sm:max-w-[70%] text-white">
+	<Accordion.Root class="w-full text-white">
 		<Accordion.Item value="item-1" class="border-[#4e535eac]">
 			<Accordion.Trigger
 				><p class="text-white w-fit text-left">Is Broughtby free?</p></Accordion.Trigger

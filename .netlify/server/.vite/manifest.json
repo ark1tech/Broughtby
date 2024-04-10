@@ -87,13 +87,17 @@
       "_exports.js"
     ]
   },
+  "src/lib/bg3.svg": {
+    "file": "_app/immutable/assets/bg3.DhtDBMJr.svg",
+    "src": "src/lib/bg3.svg"
+  },
   "src/lib/broughtby.svg": {
     "file": "_app/immutable/assets/broughtby.D38P5xDZ.svg",
     "src": "src/lib/broughtby.svg"
   },
-  "src/lib/click.svg": {
-    "file": "_app/immutable/assets/click.Be4SYJUk.svg",
-    "src": "src/lib/click.svg"
+  "src/lib/click.png": {
+    "file": "_app/immutable/assets/click.BOqzSIlk.png",
+    "src": "src/lib/click.png"
   },
   "src/lib/univ/ateneo.svg": {
     "file": "_app/immutable/assets/ateneo.BlIjnsbG.svg",
@@ -133,10 +137,11 @@
       "_Button.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout.BWEcRpkM.css"
+      "_app/immutable/assets/_layout.ConzGxCQ.css"
     ],
     "assets": [
-      "_app/immutable/assets/broughtby.D38P5xDZ.svg"
+      "_app/immutable/assets/broughtby.D38P5xDZ.svg",
+      "_app/immutable/assets/bg3.DhtDBMJr.svg"
     ]
   },
   "src/routes/+page.server.ts": {
@@ -171,7 +176,7 @@
       "_app/immutable/assets/pup.D3hyy-z5.svg",
       "_app/immutable/assets/mapua.DErDZ4_O.svg",
       "_app/immutable/assets/feu.Cabzd4k6.svg",
-      "_app/immutable/assets/click.Be4SYJUk.svg"
+      "_app/immutable/assets/click.BOqzSIlk.png"
     ]
   }
 }

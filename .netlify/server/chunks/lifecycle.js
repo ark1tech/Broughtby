@@ -84,12 +84,12 @@ function hasContext(key) {
 }
 export {
   subscribe as a,
-  getContext as b,
-  createEventDispatcher as c,
-  compute_rest_props as d,
+  get_store_value as b,
+  compute_rest_props as c,
+  createEventDispatcher as d,
   blank_object as e,
   current_component as f,
-  get_store_value as g,
+  getContext as g,
   hasContext as h,
   set_current_component as i,
   safe_not_equal as j,

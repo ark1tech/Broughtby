@@ -1,18 +1,20 @@
-import { c as create_ssr_component, a as add_attribute, e as escape, s as spread, b as escape_object, d as escape_attribute_value, v as validate_component, f as each } from "../../chunks/ssr.js";
+import { c as create_ssr_component, a as add_attribute, e as escape, s as spread, b as escape_object, d as each, f as escape_attribute_value, v as validate_component } from "../../chunks/ssr.js";
 import { B as Button$2 } from "../../chunks/Button.js";
-import { g as get_store_value, c as createEventDispatcher, s as setContext, b as getContext, d as compute_rest_props, a as subscribe, h as hasContext, n as noop$1 } from "../../chunks/lifecycle.js";
-import "dequal";
-import { d as derived, w as writable, r as readable } from "../../chunks/index.js";
-import { t as tick, s as superForm, z as zodClient, f as formSchema } from "../../chunks/zod.js";
+import { h as hasContext, g as getContext, s as setContext, a as subscribe, n as noop$1, c as compute_rest_props, b as get_store_value, d as createEventDispatcher } from "../../chunks/lifecycle.js";
 import { nanoid } from "nanoid/non-secure";
+import { w as writable, d as derived, r as readable } from "../../chunks/index.js";
 import { clsx } from "clsx";
+import "dequal";
 import { tv } from "tailwind-variants";
 import { twMerge } from "tailwind-merge";
+import { t as tick, s as superForm, z as zodClient, f as formSchema } from "../../chunks/zod.js";
 import "../../chunks/stores.js";
 import "just-clone";
 import "ts-deepmerge";
 import "devalue";
 import "memoize-weak";
+import { gsap } from "gsap/dist/gsap.js";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger.js";
 const void_element_names = /^(?:area|base|br|col|command|embed|hr|img|input|keygen|link|meta|param|source|track|wbr)$/;
 function is_void(name2) {
   return void_element_names.test(name2) || name2.toLowerCase() === "!doctype";
@@ -30,13 +32,262 @@ const Marquee = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 const TextCard = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let { heading } = $$props;
   let { content } = $$props;
+  let { src } = $$props;
   if ($$props.heading === void 0 && $$bindings.heading && heading !== void 0)
     $$bindings.heading(heading);
   if ($$props.content === void 0 && $$bindings.content && content !== void 0)
     $$bindings.content(content);
-  return `<div class="flex-[1_1_0%]"><div class="w-full h-full rounded-[0.75rem] overflow-clip bg-gradient-to-b from-[#ffffff2c] via-[#a2a2a220] to-[#a2a2a200] p-[0.065rem]"><div class="w-full h-full p-10 flex flex-col gap-[1rem] bg-[#19191b] rounded-[0.75rem] "><h4 class="w-full h-1/3">${escape(heading)}</h4> <p class="w-full">${escape(content)}</p></div></div></div> `;
+  if ($$props.src === void 0 && $$bindings.src && src !== void 0)
+    $$bindings.src(src);
+  return `<div class="flex-[1_1_0%]"><div class="w-full h-full rounded-[0.75rem] overflow-clip bg-gradient-to-b from-[#ffffff2c] via-[#a2a2a220] to-[#a2a2a200] p-[0.065rem]"><div class="relative w-full h-full p-10 flex flex-col gap-[1rem] bg-[#19191b] hover:bg-[#202023] ease-linear transition-all rounded-[0.75rem] justify-start"><img${add_attribute("src", src, 0)} class="h-auto min-w-[50px] w-[100px] top-0 left-4" alt=""> <div class="h-[10%] flex flex-col justify-start"><h4 class="w-full">${escape(heading)}</h4></div> <p class="w-full">${escape(content)}</p></div></div></div> `;
 });
-const ClickURL = "/_app/immutable/assets/click.Be4SYJUk.svg";
+const ClickURL = "/_app/immutable/assets/click.BOqzSIlk.png";
+const Receipt = "data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23ffffff2c'%20stroke-width='1'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='icon%20icon-tabler%20icons-tabler-outline%20icon-tabler-receipt'%3e%3cpath%20stroke='none'%20d='M0%200h24v24H0z'%20fill='none'/%3e%3cpath%20d='M5%2021v-16a2%202%200%200%201%202%20-2h10a2%202%200%200%201%202%202v16l-3%20-2l-2%202l-2%20-2l-2%202l-2%20-2l-3%202m4%20-14h6m-6%204h6m-2%204h2'%20/%3e%3c/svg%3e";
+const Slow = "data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23ffffff2c'%20stroke-width='1'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='icon%20icon-tabler%20icons-tabler-outline%20icon-tabler-zzz'%3e%3cpath%20stroke='none'%20d='M0%200h24v24H0z'%20fill='none'/%3e%3cpath%20d='M4%2012h6l-6%208h6'%20/%3e%3cpath%20d='M14%204h6l-6%208h6'%20/%3e%3c/svg%3e";
+const Puzzle = "data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23ffffff2c'%20stroke-width='1'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='icon%20icon-tabler%20icons-tabler-outline%20icon-tabler-mood-puzzled'%3e%3cpath%20stroke='none'%20d='M0%200h24v24H0z'%20fill='none'/%3e%3cpath%20d='M14.986%203.51a9%209%200%201%200%201.514%2016.284c2.489%20-1.437%204.181%20-3.978%204.5%20-6.794'%20/%3e%3cpath%20d='M10%2010h.01'%20/%3e%3cpath%20d='M14%208h.01'%20/%3e%3cpath%20d='M12%2015c1%20-1.333%202%20-2%203%20-2'%20/%3e%3cpath%20d='M20%209v.01'%20/%3e%3cpath%20d='M20%206a2.003%202.003%200%200%200%20.914%20-3.782a1.98%201.98%200%200%200%20-2.414%20.483'%20/%3e%3c/svg%3e";
+const FORM_FIELD = Symbol("FORM_FIELD_CTX");
+function setFormField(props) {
+  setContext(FORM_FIELD, props);
+  return props;
+}
+function getFormField() {
+  if (!hasContext(FORM_FIELD)) {
+    ctxError("Form.Field");
+  }
+  return getContext(FORM_FIELD);
+}
+const FORM_CONTROL = Symbol("FORM_CONTROL_CTX");
+function setFormControl(props) {
+  setContext(FORM_CONTROL, props);
+  return props;
+}
+function getFormControl() {
+  if (!hasContext(FORM_CONTROL)) {
+    ctxError("<Control />");
+  }
+  return getContext(FORM_CONTROL);
+}
+function ctxError(ctx) {
+  throw new Error(`Unable to find \`${ctx}\` context. Did you forget to wrap the component in a \`${ctx}\`?`);
+}
+function getAriaDescribedBy({ fieldErrorsId = void 0, descriptionId = void 0, errors }) {
+  let describedBy = "";
+  if (descriptionId) {
+    describedBy += descriptionId + " ";
+  }
+  if (errors.length && fieldErrorsId) {
+    describedBy += fieldErrorsId;
+  }
+  return describedBy ? describedBy.trim() : void 0;
+}
+function getAriaRequired(constraints) {
+  if (!("required" in constraints))
+    return void 0;
+  return constraints.required ? "true" : void 0;
+}
+function getAriaInvalid(errors) {
+  return errors && errors.length ? "true" : void 0;
+}
+function getDataFsError(errors) {
+  return errors && errors.length ? "" : void 0;
+}
+function generateId$1() {
+  return nanoid(5);
+}
+function extractErrorArray(errors) {
+  if (Array.isArray(errors))
+    return errors;
+  if (typeof errors === "object" && "_errors" in errors) {
+    if (errors._errors !== void 0)
+      return errors._errors;
+  }
+  return [];
+}
+function getValueAtPath(path, obj) {
+  const keys = path.split(/[[\].]/).filter(Boolean);
+  let value = obj;
+  for (const key of keys) {
+    if (typeof value !== "object" || value === null) {
+      return void 0;
+    }
+    value = value[key];
+  }
+  return value;
+}
+const Field = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let formErrors;
+  let formConstraints;
+  let formTainted;
+  let formData;
+  let $formTainted, $$unsubscribe_formTainted = noop$1, $$subscribe_formTainted = () => ($$unsubscribe_formTainted(), $$unsubscribe_formTainted = subscribe(formTainted, ($$value) => $formTainted = $$value), formTainted);
+  let $formConstraints, $$unsubscribe_formConstraints = noop$1, $$subscribe_formConstraints = () => ($$unsubscribe_formConstraints(), $$unsubscribe_formConstraints = subscribe(formConstraints, ($$value) => $formConstraints = $$value), formConstraints);
+  let $formErrors, $$unsubscribe_formErrors = noop$1, $$subscribe_formErrors = () => ($$unsubscribe_formErrors(), $$unsubscribe_formErrors = subscribe(formErrors, ($$value) => $formErrors = $$value), formErrors);
+  let $formData, $$unsubscribe_formData = noop$1, $$subscribe_formData = () => ($$unsubscribe_formData(), $$unsubscribe_formData = subscribe(formData, ($$value) => $formData = $$value), formData);
+  let $errors, $$unsubscribe_errors;
+  let $tainted, $$unsubscribe_tainted;
+  let { form } = $$props;
+  let { name: name2 } = $$props;
+  const field = {
+    name: writable(name2),
+    errors: writable([]),
+    constraints: writable({}),
+    tainted: writable(false),
+    fieldErrorsId: writable(),
+    descriptionId: writable(),
+    form
+  };
+  const { tainted, errors } = field;
+  $$unsubscribe_tainted = subscribe(tainted, (value) => $tainted = value);
+  $$unsubscribe_errors = subscribe(errors, (value) => $errors = value);
+  setFormField(field);
+  if ($$props.form === void 0 && $$bindings.form && form !== void 0)
+    $$bindings.form(form);
+  if ($$props.name === void 0 && $$bindings.name && name2 !== void 0)
+    $$bindings.name(name2);
+  $$subscribe_formErrors({ errors: formErrors, constraints: formConstraints, tainted: formTainted, form: formData } = form, $$subscribe_formConstraints(), $$subscribe_formTainted(), $$subscribe_formData());
+  {
+    field.name.set(name2);
+  }
+  {
+    field.errors.set(extractErrorArray(getValueAtPath(name2, $formErrors)));
+  }
+  {
+    field.constraints.set(getValueAtPath(name2, $formConstraints) ?? {});
+  }
+  {
+    field.tainted.set($formTainted ? getValueAtPath(name2, $formTainted) === true : false);
+  }
+  $$unsubscribe_formTainted();
+  $$unsubscribe_formConstraints();
+  $$unsubscribe_formErrors();
+  $$unsubscribe_formData();
+  $$unsubscribe_errors();
+  $$unsubscribe_tainted();
+  return ` ${slots.default ? slots.default({
+    value: $formData[name2],
+    errors: $errors,
+    tainted: $tainted,
+    constraints: $formConstraints[name2]
+  }) : ``}`;
+});
+const Control$1 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let errorAttr;
+  let attrs;
+  let labelAttrs;
+  let $idStore, $$unsubscribe_idStore;
+  let $constraints, $$unsubscribe_constraints;
+  let $errors, $$unsubscribe_errors;
+  let $descriptionId, $$unsubscribe_descriptionId;
+  let $fieldErrorsId, $$unsubscribe_fieldErrorsId;
+  let $name, $$unsubscribe_name;
+  let { id = generateId$1() } = $$props;
+  const { name: name2, fieldErrorsId, descriptionId, errors, constraints } = getFormField();
+  $$unsubscribe_name = subscribe(name2, (value) => $name = value);
+  $$unsubscribe_fieldErrorsId = subscribe(fieldErrorsId, (value) => $fieldErrorsId = value);
+  $$unsubscribe_descriptionId = subscribe(descriptionId, (value) => $descriptionId = value);
+  $$unsubscribe_errors = subscribe(errors, (value) => $errors = value);
+  $$unsubscribe_constraints = subscribe(constraints, (value) => $constraints = value);
+  const controlContext = {
+    id: writable(id),
+    attrs: writable(),
+    labelAttrs: writable()
+  };
+  const { id: idStore } = controlContext;
+  $$unsubscribe_idStore = subscribe(idStore, (value) => $idStore = value);
+  setFormControl(controlContext);
+  if ($$props.id === void 0 && $$bindings.id && id !== void 0)
+    $$bindings.id(id);
+  {
+    controlContext.id.set(id);
+  }
+  errorAttr = getDataFsError($errors);
+  attrs = {
+    name: $name,
+    id: $idStore,
+    "data-fs-error": errorAttr,
+    "aria-describedby": getAriaDescribedBy({
+      fieldErrorsId: $fieldErrorsId,
+      descriptionId: $descriptionId,
+      errors: $errors
+    }),
+    "aria-invalid": getAriaInvalid($errors),
+    "aria-required": getAriaRequired($constraints),
+    "data-fs-control": ""
+  };
+  labelAttrs = {
+    for: $idStore,
+    "data-fs-label": "",
+    "data-fs-error": errorAttr
+  };
+  {
+    controlContext.attrs.set(attrs);
+  }
+  {
+    controlContext.labelAttrs.set(labelAttrs);
+  }
+  $$unsubscribe_idStore();
+  $$unsubscribe_constraints();
+  $$unsubscribe_errors();
+  $$unsubscribe_descriptionId();
+  $$unsubscribe_fieldErrorsId();
+  $$unsubscribe_name();
+  return ` ${slots.default ? slots.default({ attrs }) : ``}`;
+});
+const Field_errors = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let errorAttr;
+  let fieldErrorsAttrs;
+  let errorAttrs;
+  let $$restProps = compute_rest_props($$props, ["id", "asChild", "el"]);
+  let $fieldErrorsId, $$unsubscribe_fieldErrorsId;
+  let $errors, $$unsubscribe_errors;
+  const { fieldErrorsId, errors } = getFormField();
+  $$unsubscribe_fieldErrorsId = subscribe(fieldErrorsId, (value) => $fieldErrorsId = value);
+  $$unsubscribe_errors = subscribe(errors, (value) => $errors = value);
+  let { id = generateId$1() } = $$props;
+  let { asChild = false } = $$props;
+  let { el = void 0 } = $$props;
+  if ($$props.id === void 0 && $$bindings.id && id !== void 0)
+    $$bindings.id(id);
+  if ($$props.asChild === void 0 && $$bindings.asChild && asChild !== void 0)
+    $$bindings.asChild(asChild);
+  if ($$props.el === void 0 && $$bindings.el && el !== void 0)
+    $$bindings.el(el);
+  errorAttr = getDataFsError($errors);
+  {
+    fieldErrorsId.set(id);
+  }
+  fieldErrorsAttrs = {
+    id: $fieldErrorsId,
+    "data-fs-error": errorAttr,
+    "data-fs-field-errors": "",
+    "aria-live": "assertive",
+    ...$$restProps
+  };
+  errorAttrs = {
+    "data-fs-field-error": "",
+    "data-fs-error": errorAttr
+  };
+  $$unsubscribe_fieldErrorsId();
+  $$unsubscribe_errors();
+  return ` ${asChild ? `${slots.default ? slots.default({
+    errors: $errors,
+    fieldErrorsAttrs,
+    errorAttrs
+  }) : ``}` : `<div${spread([escape_object(fieldErrorsAttrs)], {})}${add_attribute("this", el, 0)}>${slots.default ? slots.default({
+    errors: $errors,
+    fieldErrorsAttrs,
+    errorAttrs
+  }) : ` ${each($errors, (error) => {
+    return `<div${spread([escape_object(errorAttrs)], {})}>${escape(error)}</div>`;
+  })} `}</div>`}`;
+});
+function cubicOut(t) {
+  const f = t - 1;
+  return f * f * f + 1;
+}
+function cn(...inputs) {
+  return twMerge(clsx(inputs));
+}
 function styleToString(style) {
   return Object.keys(style).reduce((str, key) => {
     if (style[key] === void 0)
@@ -290,12 +541,12 @@ const overridable = (_store, onChange) => {
     set
   };
 };
-function generateId$1() {
+function generateId() {
   return nanoid(10);
 }
 function generateIds(args) {
   return args.reduce((acc, curr) => {
-    acc[curr] = generateId$1();
+    acc[curr] = generateId();
     return acc;
   }, {});
 }
@@ -484,8 +735,8 @@ const createAccordion = (props) => {
     },
     action: (node) => {
       tick().then(() => {
-        const contentId = generateId$1();
-        const triggerId = generateId$1();
+        const contentId = generateId();
+        const triggerId = generateId();
         const parentTrigger = document.querySelector(`${selector("trigger")}, [data-value="${node.dataset.value}"]`);
         if (!isHTMLElement(parentTrigger))
           return;
@@ -985,404 +1236,6 @@ const Label$1 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   $$unsubscribe_root();
   return `${asChild ? `${slots.default ? slots.default({ builder }) : ``}` : `<label${spread([escape_object(builder), escape_object($$restProps)], {})}${add_attribute("this", el, 0)}>${slots.default ? slots.default({ builder }) : ``}</label>`}`;
 });
-function cubicOut(t) {
-  const f = t - 1;
-  return f * f * f + 1;
-}
-function slide(node, { delay = 0, duration = 400, easing = cubicOut, axis = "y" } = {}) {
-  const style = getComputedStyle(node);
-  const opacity = +style.opacity;
-  const primary_property = axis === "y" ? "height" : "width";
-  const primary_property_value = parseFloat(style[primary_property]);
-  const secondary_properties = axis === "y" ? ["top", "bottom"] : ["left", "right"];
-  const capitalized_secondary_properties = secondary_properties.map(
-    (e) => `${e[0].toUpperCase()}${e.slice(1)}`
-  );
-  const padding_start_value = parseFloat(style[`padding${capitalized_secondary_properties[0]}`]);
-  const padding_end_value = parseFloat(style[`padding${capitalized_secondary_properties[1]}`]);
-  const margin_start_value = parseFloat(style[`margin${capitalized_secondary_properties[0]}`]);
-  const margin_end_value = parseFloat(style[`margin${capitalized_secondary_properties[1]}`]);
-  const border_width_start_value = parseFloat(
-    style[`border${capitalized_secondary_properties[0]}Width`]
-  );
-  const border_width_end_value = parseFloat(
-    style[`border${capitalized_secondary_properties[1]}Width`]
-  );
-  return {
-    delay,
-    duration,
-    easing,
-    css: (t) => `overflow: hidden;opacity: ${Math.min(t * 20, 1) * opacity};${primary_property}: ${t * primary_property_value}px;padding-${secondary_properties[0]}: ${t * padding_start_value}px;padding-${secondary_properties[1]}: ${t * padding_end_value}px;margin-${secondary_properties[0]}: ${t * margin_start_value}px;margin-${secondary_properties[1]}: ${t * margin_end_value}px;border-${secondary_properties[0]}-width: ${t * border_width_start_value}px;border-${secondary_properties[1]}-width: ${t * border_width_end_value}px;`
-  };
-}
-function cn(...inputs) {
-  return twMerge(clsx(inputs));
-}
-const Accordion_content = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let $$restProps = compute_rest_props($$props, ["class", "transition", "transitionConfig"]);
-  let { class: className = void 0 } = $$props;
-  let { transition = slide } = $$props;
-  let { transitionConfig = { duration: 200 } } = $$props;
-  if ($$props.class === void 0 && $$bindings.class && className !== void 0)
-    $$bindings.class(className);
-  if ($$props.transition === void 0 && $$bindings.transition && transition !== void 0)
-    $$bindings.transition(transition);
-  if ($$props.transitionConfig === void 0 && $$bindings.transitionConfig && transitionConfig !== void 0)
-    $$bindings.transitionConfig(transitionConfig);
-  return `${validate_component(Accordion_content$1, "AccordionPrimitive.Content").$$render(
-    $$result,
-    Object.assign(
-      {},
-      {
-        class: cn("overflow-hidden text-sm", className)
-      },
-      { transition },
-      { transitionConfig },
-      $$restProps
-    ),
-    {},
-    {
-      default: () => {
-        return `<div class="pb-4 pt-0">${slots.default ? slots.default({}) : ``}</div>`;
-      }
-    }
-  )}`;
-});
-const Accordion_item = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let $$restProps = compute_rest_props($$props, ["class", "value"]);
-  let { class: className = void 0 } = $$props;
-  let { value } = $$props;
-  if ($$props.class === void 0 && $$bindings.class && className !== void 0)
-    $$bindings.class(className);
-  if ($$props.value === void 0 && $$bindings.value && value !== void 0)
-    $$bindings.value(value);
-  return `${validate_component(Accordion_item$1, "AccordionPrimitive.Item").$$render($$result, Object.assign({}, { value }, { class: cn("border-b", className) }, $$restProps), {}, {
-    default: () => {
-      return `${slots.default ? slots.default({}) : ``}`;
-    }
-  })}`;
-});
-const ChevronDown = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let $$restProps = compute_rest_props($$props, ["size", "role", "color", "ariaLabel", "withEvents"]);
-  const ctx = getContext("iconCtx") ?? {};
-  let { size = ctx.size || "24" } = $$props;
-  let { role = ctx.role || "img" } = $$props;
-  let { color = ctx.color || "currentColor" } = $$props;
-  let { ariaLabel = "chevron down," } = $$props;
-  let { withEvents = false } = $$props;
-  if ($$props.size === void 0 && $$bindings.size && size !== void 0)
-    $$bindings.size(size);
-  if ($$props.role === void 0 && $$bindings.role && role !== void 0)
-    $$bindings.role(role);
-  if ($$props.color === void 0 && $$bindings.color && color !== void 0)
-    $$bindings.color(color);
-  if ($$props.ariaLabel === void 0 && $$bindings.ariaLabel && ariaLabel !== void 0)
-    $$bindings.ariaLabel(ariaLabel);
-  if ($$props.withEvents === void 0 && $$bindings.withEvents && withEvents !== void 0)
-    $$bindings.withEvents(withEvents);
-  return `${withEvents ? `<svg${spread(
-    [
-      { width: escape_attribute_value(size) },
-      { height: escape_attribute_value(size) },
-      escape_object($$restProps),
-      { role: escape_attribute_value(role) },
-      {
-        "aria-label": escape_attribute_value(ariaLabel)
-      },
-      { viewBox: "0 0 15 15" },
-      { fill: escape_attribute_value(color) },
-      { xmlns: "http://www.w3.org/2000/svg" }
-    ],
-    {}
-  )}><path fill-rule="evenodd" clip-rule="evenodd" d="M3.13523 6.15803C3.3241 5.95657 3.64052 5.94637 3.84197 6.13523L7.5 9.56464L11.158 6.13523C11.3595 5.94637 11.6759 5.95657 11.8648 6.15803C12.0536 6.35949 12.0434 6.67591 11.842 6.86477L7.84197 10.6148C7.64964 10.7951 7.35036 10.7951 7.15803 10.6148L3.15803 6.86477C2.95657 6.67591 2.94637 6.35949 3.13523 6.15803Z" fill="currentColor"></path></svg>` : `<svg${spread(
-    [
-      { width: escape_attribute_value(size) },
-      { height: escape_attribute_value(size) },
-      escape_object($$restProps),
-      { role: escape_attribute_value(role) },
-      {
-        "aria-label": escape_attribute_value(ariaLabel)
-      },
-      { viewBox: "0 0 15 15" },
-      { fill: escape_attribute_value(color) },
-      { xmlns: "http://www.w3.org/2000/svg" }
-    ],
-    {}
-  )}><path fill-rule="evenodd" clip-rule="evenodd" d="M3.13523 6.15803C3.3241 5.95657 3.64052 5.94637 3.84197 6.13523L7.5 9.56464L11.158 6.13523C11.3595 5.94637 11.6759 5.95657 11.8648 6.15803C12.0536 6.35949 12.0434 6.67591 11.842 6.86477L7.84197 10.6148C7.64964 10.7951 7.35036 10.7951 7.15803 10.6148L3.15803 6.86477C2.95657 6.67591 2.94637 6.35949 3.13523 6.15803Z" fill="currentColor"></path></svg>`} `;
-});
-const Accordion_trigger = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let $$restProps = compute_rest_props($$props, ["class", "level"]);
-  let { class: className = void 0 } = $$props;
-  let { level = 3 } = $$props;
-  if ($$props.class === void 0 && $$bindings.class && className !== void 0)
-    $$bindings.class(className);
-  if ($$props.level === void 0 && $$bindings.level && level !== void 0)
-    $$bindings.level(level);
-  return `${validate_component(Accordion_header, "AccordionPrimitive.Header").$$render($$result, { level, class: "flex" }, {}, {
-    default: () => {
-      return `${validate_component(Accordion_trigger$1, "AccordionPrimitive.Trigger").$$render(
-        $$result,
-        Object.assign(
-          {},
-          {
-            class: cn("flex flex-1 items-center justify-between py-4 text-sm font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180", className)
-          },
-          $$restProps
-        ),
-        {},
-        {
-          default: () => {
-            return `${slots.default ? slots.default({}) : ``} ${validate_component(ChevronDown, "ChevronDown").$$render(
-              $$result,
-              {
-                class: "h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200"
-              },
-              {},
-              {}
-            )}`;
-          }
-        }
-      )}`;
-    }
-  })}`;
-});
-const Root = Accordion;
-const FORM_FIELD = Symbol("FORM_FIELD_CTX");
-function setFormField(props) {
-  setContext(FORM_FIELD, props);
-  return props;
-}
-function getFormField() {
-  if (!hasContext(FORM_FIELD)) {
-    ctxError("Form.Field");
-  }
-  return getContext(FORM_FIELD);
-}
-const FORM_CONTROL = Symbol("FORM_CONTROL_CTX");
-function setFormControl(props) {
-  setContext(FORM_CONTROL, props);
-  return props;
-}
-function getFormControl() {
-  if (!hasContext(FORM_CONTROL)) {
-    ctxError("<Control />");
-  }
-  return getContext(FORM_CONTROL);
-}
-function ctxError(ctx) {
-  throw new Error(`Unable to find \`${ctx}\` context. Did you forget to wrap the component in a \`${ctx}\`?`);
-}
-function getAriaDescribedBy({ fieldErrorsId = void 0, descriptionId = void 0, errors }) {
-  let describedBy = "";
-  if (descriptionId) {
-    describedBy += descriptionId + " ";
-  }
-  if (errors.length && fieldErrorsId) {
-    describedBy += fieldErrorsId;
-  }
-  return describedBy ? describedBy.trim() : void 0;
-}
-function getAriaRequired(constraints) {
-  if (!("required" in constraints))
-    return void 0;
-  return constraints.required ? "true" : void 0;
-}
-function getAriaInvalid(errors) {
-  return errors && errors.length ? "true" : void 0;
-}
-function getDataFsError(errors) {
-  return errors && errors.length ? "" : void 0;
-}
-function generateId() {
-  return nanoid(5);
-}
-function extractErrorArray(errors) {
-  if (Array.isArray(errors))
-    return errors;
-  if (typeof errors === "object" && "_errors" in errors) {
-    if (errors._errors !== void 0)
-      return errors._errors;
-  }
-  return [];
-}
-function getValueAtPath(path, obj) {
-  const keys = path.split(/[[\].]/).filter(Boolean);
-  let value = obj;
-  for (const key of keys) {
-    if (typeof value !== "object" || value === null) {
-      return void 0;
-    }
-    value = value[key];
-  }
-  return value;
-}
-const Field = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let formErrors;
-  let formConstraints;
-  let formTainted;
-  let formData;
-  let $formTainted, $$unsubscribe_formTainted = noop$1, $$subscribe_formTainted = () => ($$unsubscribe_formTainted(), $$unsubscribe_formTainted = subscribe(formTainted, ($$value) => $formTainted = $$value), formTainted);
-  let $formConstraints, $$unsubscribe_formConstraints = noop$1, $$subscribe_formConstraints = () => ($$unsubscribe_formConstraints(), $$unsubscribe_formConstraints = subscribe(formConstraints, ($$value) => $formConstraints = $$value), formConstraints);
-  let $formErrors, $$unsubscribe_formErrors = noop$1, $$subscribe_formErrors = () => ($$unsubscribe_formErrors(), $$unsubscribe_formErrors = subscribe(formErrors, ($$value) => $formErrors = $$value), formErrors);
-  let $formData, $$unsubscribe_formData = noop$1, $$subscribe_formData = () => ($$unsubscribe_formData(), $$unsubscribe_formData = subscribe(formData, ($$value) => $formData = $$value), formData);
-  let $errors, $$unsubscribe_errors;
-  let $tainted, $$unsubscribe_tainted;
-  let { form } = $$props;
-  let { name: name2 } = $$props;
-  const field = {
-    name: writable(name2),
-    errors: writable([]),
-    constraints: writable({}),
-    tainted: writable(false),
-    fieldErrorsId: writable(),
-    descriptionId: writable(),
-    form
-  };
-  const { tainted, errors } = field;
-  $$unsubscribe_tainted = subscribe(tainted, (value) => $tainted = value);
-  $$unsubscribe_errors = subscribe(errors, (value) => $errors = value);
-  setFormField(field);
-  if ($$props.form === void 0 && $$bindings.form && form !== void 0)
-    $$bindings.form(form);
-  if ($$props.name === void 0 && $$bindings.name && name2 !== void 0)
-    $$bindings.name(name2);
-  $$subscribe_formErrors({ errors: formErrors, constraints: formConstraints, tainted: formTainted, form: formData } = form, $$subscribe_formConstraints(), $$subscribe_formTainted(), $$subscribe_formData());
-  {
-    field.name.set(name2);
-  }
-  {
-    field.errors.set(extractErrorArray(getValueAtPath(name2, $formErrors)));
-  }
-  {
-    field.constraints.set(getValueAtPath(name2, $formConstraints) ?? {});
-  }
-  {
-    field.tainted.set($formTainted ? getValueAtPath(name2, $formTainted) === true : false);
-  }
-  $$unsubscribe_formTainted();
-  $$unsubscribe_formConstraints();
-  $$unsubscribe_formErrors();
-  $$unsubscribe_formData();
-  $$unsubscribe_errors();
-  $$unsubscribe_tainted();
-  return ` ${slots.default ? slots.default({
-    value: $formData[name2],
-    errors: $errors,
-    tainted: $tainted,
-    constraints: $formConstraints[name2]
-  }) : ``}`;
-});
-const Control$1 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let errorAttr;
-  let attrs;
-  let labelAttrs;
-  let $idStore, $$unsubscribe_idStore;
-  let $constraints, $$unsubscribe_constraints;
-  let $errors, $$unsubscribe_errors;
-  let $descriptionId, $$unsubscribe_descriptionId;
-  let $fieldErrorsId, $$unsubscribe_fieldErrorsId;
-  let $name, $$unsubscribe_name;
-  let { id = generateId() } = $$props;
-  const { name: name2, fieldErrorsId, descriptionId, errors, constraints } = getFormField();
-  $$unsubscribe_name = subscribe(name2, (value) => $name = value);
-  $$unsubscribe_fieldErrorsId = subscribe(fieldErrorsId, (value) => $fieldErrorsId = value);
-  $$unsubscribe_descriptionId = subscribe(descriptionId, (value) => $descriptionId = value);
-  $$unsubscribe_errors = subscribe(errors, (value) => $errors = value);
-  $$unsubscribe_constraints = subscribe(constraints, (value) => $constraints = value);
-  const controlContext = {
-    id: writable(id),
-    attrs: writable(),
-    labelAttrs: writable()
-  };
-  const { id: idStore } = controlContext;
-  $$unsubscribe_idStore = subscribe(idStore, (value) => $idStore = value);
-  setFormControl(controlContext);
-  if ($$props.id === void 0 && $$bindings.id && id !== void 0)
-    $$bindings.id(id);
-  {
-    controlContext.id.set(id);
-  }
-  errorAttr = getDataFsError($errors);
-  attrs = {
-    name: $name,
-    id: $idStore,
-    "data-fs-error": errorAttr,
-    "aria-describedby": getAriaDescribedBy({
-      fieldErrorsId: $fieldErrorsId,
-      descriptionId: $descriptionId,
-      errors: $errors
-    }),
-    "aria-invalid": getAriaInvalid($errors),
-    "aria-required": getAriaRequired($constraints),
-    "data-fs-control": ""
-  };
-  labelAttrs = {
-    for: $idStore,
-    "data-fs-label": "",
-    "data-fs-error": errorAttr
-  };
-  {
-    controlContext.attrs.set(attrs);
-  }
-  {
-    controlContext.labelAttrs.set(labelAttrs);
-  }
-  $$unsubscribe_idStore();
-  $$unsubscribe_constraints();
-  $$unsubscribe_errors();
-  $$unsubscribe_descriptionId();
-  $$unsubscribe_fieldErrorsId();
-  $$unsubscribe_name();
-  return ` ${slots.default ? slots.default({ attrs }) : ``}`;
-});
-const Field_errors = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let errorAttr;
-  let fieldErrorsAttrs;
-  let errorAttrs;
-  let $$restProps = compute_rest_props($$props, ["id", "asChild", "el"]);
-  let $fieldErrorsId, $$unsubscribe_fieldErrorsId;
-  let $errors, $$unsubscribe_errors;
-  const { fieldErrorsId, errors } = getFormField();
-  $$unsubscribe_fieldErrorsId = subscribe(fieldErrorsId, (value) => $fieldErrorsId = value);
-  $$unsubscribe_errors = subscribe(errors, (value) => $errors = value);
-  let { id = generateId() } = $$props;
-  let { asChild = false } = $$props;
-  let { el = void 0 } = $$props;
-  if ($$props.id === void 0 && $$bindings.id && id !== void 0)
-    $$bindings.id(id);
-  if ($$props.asChild === void 0 && $$bindings.asChild && asChild !== void 0)
-    $$bindings.asChild(asChild);
-  if ($$props.el === void 0 && $$bindings.el && el !== void 0)
-    $$bindings.el(el);
-  errorAttr = getDataFsError($errors);
-  {
-    fieldErrorsId.set(id);
-  }
-  fieldErrorsAttrs = {
-    id: $fieldErrorsId,
-    "data-fs-error": errorAttr,
-    "data-fs-field-errors": "",
-    "aria-live": "assertive",
-    ...$$restProps
-  };
-  errorAttrs = {
-    "data-fs-field-error": "",
-    "data-fs-error": errorAttr
-  };
-  $$unsubscribe_fieldErrorsId();
-  $$unsubscribe_errors();
-  return ` ${asChild ? `${slots.default ? slots.default({
-    errors: $errors,
-    fieldErrorsAttrs,
-    errorAttrs
-  }) : ``}` : `<div${spread([escape_object(fieldErrorsAttrs)], {})}${add_attribute("this", el, 0)}>${slots.default ? slots.default({
-    errors: $errors,
-    fieldErrorsAttrs,
-    errorAttrs
-  }) : ` ${each($errors, (error) => {
-    return `<div${spread([escape_object(errorAttrs)], {})}>${escape(error)}</div>`;
-  })} `}</div>`}`;
-});
 const Label = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let $$restProps = compute_rest_props($$props, ["class"]);
   let { class: className = void 0 } = $$props;
@@ -1541,7 +1394,7 @@ const buttonVariants = tv({
 });
 const Form_button = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let $$restProps = compute_rest_props($$props, []);
-  return `<div class="w-fit border border-[#24478c] shadow-[0_0_5px_0_#19346a] rounded-xl overflow-clip "><div class="font-[500] tracking-[0.015em] flex flex-row items-center px-[1rem] gap-[0.6rem] bg-[#091742] shadow-[inset_0_-8px_20px_#19346a] text-white ">${validate_component(Button, "Button.Root").$$render($$result, Object.assign({}, { type: "submit" }, $$restProps), {}, {
+  return `<div class="w-fit border border-[#24478c] shadow-[0_0_5px_0_#19346a] rounded-xl overflow-clip "><div class="font-[500] tracking-[0.015em] flex flex-row items-center px-[1rem] gap-[0.6rem] bg-[#091742] shadow-[inset_0_-8px_20px_#19346a] hover:shadow-[inset_0_0px_50px_#013294] transition-all ease-linear text-white ">${validate_component(Button, "Button.Root").$$render($$result, Object.assign({}, { type: "submit" }, $$restProps), {}, {
     default: () => {
       return `Submit`;
     }
@@ -1612,12 +1465,12 @@ const Form_1 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   do {
     $$settled = true;
     $$result.head = previous_head;
-    $$rendered = `<div class="lg:w-[45%] h-full rounded-[0.75rem] overflow-clip bg-gradient-to-b from-[#ffffff2c] via-[#a2a2a220] to-[#a2a2a200] p-[0.065rem]"><div class="w-full h-full p-10 flex flex-col gap-[1rem] bg-[#19191b] rounded-[0.75rem]"><form method="POST" class="flex flex-col gap-6"><div class="flex flex-col gap-4"><div class="flex flex-row w-full justify-between">${validate_component(Form_field, "Form.Field").$$render(
+    $$rendered = `<div class="lg:w-[45%] h-full rounded-[0.75rem] overflow-clip bg-gradient-to-b from-[#ffffff2c] via-[#a2a2a220] to-[#a2a2a200] p-[0.065rem]"><div class="w-full h-full p-10 flex flex-col gap-[1rem] bg-[#19191b] hover:bg-[#202023] ease-linear transition-all rounded-[0.75rem]"><form method="POST" class="flex flex-col gap-6"><div class="flex flex-col gap-2"><div class="flex xlg:flex-row flex-col w-full justify-between gap-2">${validate_component(Form_field, "Form.Field").$$render(
       $$result,
       {
         form,
         name: "name",
-        class: "text-white w-[45%]"
+        class: "text-white xlg:w-[45%] w-full"
       },
       {},
       {
@@ -1626,7 +1479,7 @@ const Form_1 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
             default: ({ attrs }) => {
               return `${validate_component(Form_label, "Form.Label").$$render($$result, {}, {}, {
                 default: () => {
-                  return `<p class="text-white" data-svelte-h="svelte-cna4ih">Name</p>`;
+                  return `<h5 data-svelte-h="svelte-ocpsnn">Name</h5>`;
                 }
               })} ${validate_component(Input, "Input").$$render(
                 $$result,
@@ -1648,7 +1501,7 @@ const Form_1 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       {
         form,
         name: "email",
-        class: "text-white w-[45%]"
+        class: "text-white xlg:w-[45%] w-full"
       },
       {},
       {
@@ -1657,7 +1510,7 @@ const Form_1 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
             default: ({ attrs }) => {
               return `${validate_component(Form_label, "Form.Label").$$render($$result, {}, {}, {
                 default: () => {
-                  return `<p class="text-white" data-svelte-h="svelte-t2rmki">Email</p>`;
+                  return `<h5 data-svelte-h="svelte-im1opm">Email</h5>`;
                 }
               })} ${validate_component(Input, "Input").$$render(
                 $$result,
@@ -1688,11 +1541,11 @@ const Form_1 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
             default: ({ attrs }) => {
               return `${validate_component(Form_label, "Form.Label").$$render($$result, {}, {}, {
                 default: () => {
-                  return `<p class="text-white" data-svelte-h="svelte-1fykq3f">Message</p>`;
+                  return `<h5 data-svelte-h="svelte-ta2ndj">Message</h5>`;
                 }
               })} ${validate_component(Textarea, "Textarea").$$render(
                 $$result,
-                Object.assign({}, attrs, { class: "border-[#4e535eac]" }, { value: $formData.message }),
+                Object.assign({}, attrs, { class: "border-[#4e535eac]" }, { placeholder: "Your message" }, { value: $formData.message }),
                 {
                   value: ($$value) => {
                     $formData.message = $$value;
@@ -1710,11 +1563,167 @@ const Form_1 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   $$unsubscribe_formData();
   return $$rendered;
 });
+function slide(node, { delay = 0, duration = 400, easing = cubicOut, axis = "y" } = {}) {
+  const style = getComputedStyle(node);
+  const opacity = +style.opacity;
+  const primary_property = axis === "y" ? "height" : "width";
+  const primary_property_value = parseFloat(style[primary_property]);
+  const secondary_properties = axis === "y" ? ["top", "bottom"] : ["left", "right"];
+  const capitalized_secondary_properties = secondary_properties.map(
+    (e) => `${e[0].toUpperCase()}${e.slice(1)}`
+  );
+  const padding_start_value = parseFloat(style[`padding${capitalized_secondary_properties[0]}`]);
+  const padding_end_value = parseFloat(style[`padding${capitalized_secondary_properties[1]}`]);
+  const margin_start_value = parseFloat(style[`margin${capitalized_secondary_properties[0]}`]);
+  const margin_end_value = parseFloat(style[`margin${capitalized_secondary_properties[1]}`]);
+  const border_width_start_value = parseFloat(
+    style[`border${capitalized_secondary_properties[0]}Width`]
+  );
+  const border_width_end_value = parseFloat(
+    style[`border${capitalized_secondary_properties[1]}Width`]
+  );
+  return {
+    delay,
+    duration,
+    easing,
+    css: (t) => `overflow: hidden;opacity: ${Math.min(t * 20, 1) * opacity};${primary_property}: ${t * primary_property_value}px;padding-${secondary_properties[0]}: ${t * padding_start_value}px;padding-${secondary_properties[1]}: ${t * padding_end_value}px;margin-${secondary_properties[0]}: ${t * margin_start_value}px;margin-${secondary_properties[1]}: ${t * margin_end_value}px;border-${secondary_properties[0]}-width: ${t * border_width_start_value}px;border-${secondary_properties[1]}-width: ${t * border_width_end_value}px;`
+  };
+}
+const Accordion_content = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let $$restProps = compute_rest_props($$props, ["class", "transition", "transitionConfig"]);
+  let { class: className = void 0 } = $$props;
+  let { transition = slide } = $$props;
+  let { transitionConfig = { duration: 200 } } = $$props;
+  if ($$props.class === void 0 && $$bindings.class && className !== void 0)
+    $$bindings.class(className);
+  if ($$props.transition === void 0 && $$bindings.transition && transition !== void 0)
+    $$bindings.transition(transition);
+  if ($$props.transitionConfig === void 0 && $$bindings.transitionConfig && transitionConfig !== void 0)
+    $$bindings.transitionConfig(transitionConfig);
+  return `${validate_component(Accordion_content$1, "AccordionPrimitive.Content").$$render(
+    $$result,
+    Object.assign(
+      {},
+      {
+        class: cn("overflow-hidden text-sm", className)
+      },
+      { transition },
+      { transitionConfig },
+      $$restProps
+    ),
+    {},
+    {
+      default: () => {
+        return `<div class="pb-4 pt-0">${slots.default ? slots.default({}) : ``}</div>`;
+      }
+    }
+  )}`;
+});
+const Accordion_item = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let $$restProps = compute_rest_props($$props, ["class", "value"]);
+  let { class: className = void 0 } = $$props;
+  let { value } = $$props;
+  if ($$props.class === void 0 && $$bindings.class && className !== void 0)
+    $$bindings.class(className);
+  if ($$props.value === void 0 && $$bindings.value && value !== void 0)
+    $$bindings.value(value);
+  return `${validate_component(Accordion_item$1, "AccordionPrimitive.Item").$$render($$result, Object.assign({}, { value }, { class: cn("border-b", className) }, $$restProps), {}, {
+    default: () => {
+      return `${slots.default ? slots.default({}) : ``}`;
+    }
+  })}`;
+});
+const ChevronDown = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let $$restProps = compute_rest_props($$props, ["size", "role", "color", "ariaLabel", "withEvents"]);
+  const ctx = getContext("iconCtx") ?? {};
+  let { size = ctx.size || "24" } = $$props;
+  let { role = ctx.role || "img" } = $$props;
+  let { color = ctx.color || "currentColor" } = $$props;
+  let { ariaLabel = "chevron down," } = $$props;
+  let { withEvents = false } = $$props;
+  if ($$props.size === void 0 && $$bindings.size && size !== void 0)
+    $$bindings.size(size);
+  if ($$props.role === void 0 && $$bindings.role && role !== void 0)
+    $$bindings.role(role);
+  if ($$props.color === void 0 && $$bindings.color && color !== void 0)
+    $$bindings.color(color);
+  if ($$props.ariaLabel === void 0 && $$bindings.ariaLabel && ariaLabel !== void 0)
+    $$bindings.ariaLabel(ariaLabel);
+  if ($$props.withEvents === void 0 && $$bindings.withEvents && withEvents !== void 0)
+    $$bindings.withEvents(withEvents);
+  return `${withEvents ? `<svg${spread(
+    [
+      { width: escape_attribute_value(size) },
+      { height: escape_attribute_value(size) },
+      escape_object($$restProps),
+      { role: escape_attribute_value(role) },
+      {
+        "aria-label": escape_attribute_value(ariaLabel)
+      },
+      { viewBox: "0 0 15 15" },
+      { fill: escape_attribute_value(color) },
+      { xmlns: "http://www.w3.org/2000/svg" }
+    ],
+    {}
+  )}><path fill-rule="evenodd" clip-rule="evenodd" d="M3.13523 6.15803C3.3241 5.95657 3.64052 5.94637 3.84197 6.13523L7.5 9.56464L11.158 6.13523C11.3595 5.94637 11.6759 5.95657 11.8648 6.15803C12.0536 6.35949 12.0434 6.67591 11.842 6.86477L7.84197 10.6148C7.64964 10.7951 7.35036 10.7951 7.15803 10.6148L3.15803 6.86477C2.95657 6.67591 2.94637 6.35949 3.13523 6.15803Z" fill="currentColor"></path></svg>` : `<svg${spread(
+    [
+      { width: escape_attribute_value(size) },
+      { height: escape_attribute_value(size) },
+      escape_object($$restProps),
+      { role: escape_attribute_value(role) },
+      {
+        "aria-label": escape_attribute_value(ariaLabel)
+      },
+      { viewBox: "0 0 15 15" },
+      { fill: escape_attribute_value(color) },
+      { xmlns: "http://www.w3.org/2000/svg" }
+    ],
+    {}
+  )}><path fill-rule="evenodd" clip-rule="evenodd" d="M3.13523 6.15803C3.3241 5.95657 3.64052 5.94637 3.84197 6.13523L7.5 9.56464L11.158 6.13523C11.3595 5.94637 11.6759 5.95657 11.8648 6.15803C12.0536 6.35949 12.0434 6.67591 11.842 6.86477L7.84197 10.6148C7.64964 10.7951 7.35036 10.7951 7.15803 10.6148L3.15803 6.86477C2.95657 6.67591 2.94637 6.35949 3.13523 6.15803Z" fill="currentColor"></path></svg>`} `;
+});
+const Accordion_trigger = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let $$restProps = compute_rest_props($$props, ["class", "level"]);
+  let { class: className = void 0 } = $$props;
+  let { level = 3 } = $$props;
+  if ($$props.class === void 0 && $$bindings.class && className !== void 0)
+    $$bindings.class(className);
+  if ($$props.level === void 0 && $$bindings.level && level !== void 0)
+    $$bindings.level(level);
+  return `${validate_component(Accordion_header, "AccordionPrimitive.Header").$$render($$result, { level, class: "flex" }, {}, {
+    default: () => {
+      return `${validate_component(Accordion_trigger$1, "AccordionPrimitive.Trigger").$$render(
+        $$result,
+        Object.assign(
+          {},
+          {
+            class: cn("flex flex-1 items-center justify-between py-4 text-sm font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180", className)
+          },
+          $$restProps
+        ),
+        {},
+        {
+          default: () => {
+            return `${slots.default ? slots.default({}) : ``} ${validate_component(ChevronDown, "ChevronDown").$$render(
+              $$result,
+              {
+                class: "h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200"
+              },
+              {},
+              {}
+            )}`;
+          }
+        }
+      )}`;
+    }
+  })}`;
+});
+const Root = Accordion;
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let { data } = $$props;
+  gsap.registerPlugin(ScrollTrigger);
   if ($$props.data === void 0 && $$bindings.data && data !== void 0)
     $$bindings.data(data);
-  return `${$$result.head += `<!-- HEAD_svelte-bu05op_START -->${$$result.title = `<title>Broughtby</title>`, ""}<meta name="description" content="Broughtby"><!-- HEAD_svelte-bu05op_END -->`, ""} <header class="flex flex-col items-center justify-between pt-[8rem] min-h-[100dvh] w-full"><div class="flex flex-col items-center gap-[2rem] w-full"><h1 class="text-white md:w-[60%] w-[80%] text-center" data-svelte-h="svelte-1c47us5">Make payments easy for your <span class="text-[#0052FF]">sponsors</span></h1> <p class="text-center" data-svelte-h="svelte-7mguqa">A payment solution built for student org events—no bureaucracy required.</p> ${validate_component(Button$2, "Button").$$render(
+  return `${$$result.head += `<!-- HEAD_svelte-1lxubl5_START -->${$$result.title = `<title>Broughtby</title>`, ""}<meta name="description" content="Broughtby"><meta property="og:title" content="Broughtby"><meta property="og:type" content="product"><meta property="og:url" content="https://broughtby.arkimanago.com"><meta property="og:image" content="./meta.png"><meta property="og:title" content="Broughtby"><meta property="og:type" content="product"><meta property="og:url" content="https://broughtby.arkimanago.com"><meta property="og:image" content="./meta.png"><meta property="og:image:width" content="1432"><meta property="og:image:height" content="753"><meta name="twitter:title" content="Broughtby"><meta name="twitter:description" content="A payment solution built for student org events—no bureaucracy required."><meta name="twitter:image" content="https://broughtby.arkimanago.com"><meta name="twitter:card" content="../lib/meta.png"><!-- HEAD_svelte-1lxubl5_END -->`, ""} <header class="flex flex-col items-center justify-between gap-[3rem] pt-[8rem] min-h-[100dvh] w-full"><div class="flex flex-col items-center gap-[2rem] w-full"><h1 class="text-white md:w-[60%] w-[80%] text-center" data-svelte-h="svelte-1c47us5">Make payments easy for your <span class="text-[#0052FF]">sponsors</span></h1> <p class="text-center" data-svelte-h="svelte-7mguqa">A payment solution built for student org events—no bureaucracy required.</p> ${validate_component(Button$2, "Button").$$render(
     $$result,
     {
       licon: "",
@@ -1724,9 +1733,10 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     },
     {},
     {}
-  )}</div> <div class="flex flex-col items-center pb-[3rem] gap-[2rem]"><h5 class="w-fit text-center" data-svelte-h="svelte-1erdhp7">Trusted by top universities in the Philippines</h5> ${validate_component(Marquee, "Marquee").$$render($$result, {}, {}, {})}</div></header> <section class="w-full flex flex-col items-center pt-[5rem] gap-[2.5rem]"><h2 class="text-white md:w-[60%] w-[80%] text-center" data-svelte-h="svelte-1kw8pp2">Your persistent problems,</h2> <div class="flex lg:flex-row flex-col w-full justify-evenly gap-[2rem]">${validate_component(TextCard, "TextCard").$$render(
+  )}</div> <div class="flex flex-col items-center pb-[3rem] gap-[2rem]"><h5 class="w-fit text-center" data-svelte-h="svelte-1erdhp7">Trusted by top universities in the Philippines</h5> ${validate_component(Marquee, "Marquee").$$render($$result, {}, {}, {})}</div></header> <section class="w-full min-h-[90dvh] flex flex-col items-center pt-[5rem] gap-[3rem] justify-between"><h2 class="text-white md:w-[60%] w-[80%] text-center" data-svelte-h="svelte-gruco6">Your persistent problems</h2> <div class="flex flex-grow lg:flex-row flex-col w-full justify-evenly gap-[2rem]">${validate_component(TextCard, "TextCard").$$render(
     $$result,
     {
+      src: Receipt,
       heading: "Can't issue official receipts",
       content: "Your org needs to be SEC-registered, but that comes with documents and taxes. Too much bureaucracy."
     },
@@ -1735,6 +1745,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   )} ${validate_component(TextCard, "TextCard").$$render(
     $$result,
     {
+      src: Slow,
       heading: "Slow passthrough services",
       content: "You partner with an incorporated org to issue receipts, but they haven't replied to your emails in weeks."
     },
@@ -1743,134 +1754,128 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   )} ${validate_component(TextCard, "TextCard").$$render(
     $$result,
     {
-      heading: "Supporting payment methods is hard",
+      src: Puzzle,
+      heading: "Hard payment methods",
       content: "The payments are being sent to some member's bank account, or you're collecting cheques from far-away company offices."
     },
     {},
     {}
-  )}</div></section> <section class="w-full flex flex-col items-center justify-center pt-[5rem]" data-svelte-h="svelte-11x7abn"><h2 class="text-white w-fit text-center">now have <span class="text-[#0052FF]">solutions</span></h2> <div class="gradient-mask-l-60"><div class="gradient-mask-r-60"><img alt="ClickURL"${add_attribute("src", ClickURL, 0)} class="w-[800px] h-auto"></div></div></section> <section class="w-full min-h-[100dvh] flex flex-col items-center mt-[5rem] gap-3" data-svelte-h="svelte-h99ee8"><div class="w-full absolute bg-[#00000031] flex flex-col"><div class="px-[10dvw] p-[6rem] w-full min-h-[50dvh] flex lg:flex-row flex-col gap-10"><div class="lg:w-1/2 w-full flex flex-col gap-9"><h3 class="w-full">Process payments <span class="drop-shadow-[0_4px_10px_#0052FFEE]">instantly</span></h3> <p class="w-full">We&#39;ll handle the invoices, payment processing, official receipts, and anything else your
-					sponsors need to have a hassle-free, on-the-books transaction.</p></div></div> <div class="px-[10dvw] p-[6rem] w-full min-h-[50dvh] flex lg:flex-row flex-col gap-10"><div class="lg:w-1/2 w-full flex flex-col gap-9"><h3 class="w-full">Customize your <span class="drop-shadow-[0_4px_10px_#0052FFEE]">campaign page</span></h3> <p class="w-full">Create a professional &amp; sleek campaign page with an easily shareable short-link. Show your
-					sponsors you mean business.</p></div></div></div></section> <faq id="faq" class="w-full flex flex-col items-center pt-[5rem] min-h-[100dvh] gap-[2rem]"><h2 class="text-white w-fit text-center" data-svelte-h="svelte-z99l1n">FAQs</h2> ${validate_component(Root, "Accordion.Root").$$render(
-    $$result,
-    {
-      class: "w-full sm:max-w-[70%] text-white"
-    },
-    {},
-    {
-      default: () => {
-        return `${validate_component(Accordion_item, "Accordion.Item").$$render(
-          $$result,
-          {
-            value: "item-1",
-            class: "border-[#4e535eac]"
-          },
-          {},
-          {
-            default: () => {
-              return `${validate_component(Accordion_trigger, "Accordion.Trigger").$$render($$result, {}, {}, {
-                default: () => {
-                  return `<p class="text-white w-fit text-left" data-svelte-h="svelte-1c836rt">Is Broughtby free?</p>`;
-                }
-              })} ${validate_component(Accordion_content, "Accordion.Content").$$render($$result, {}, {}, {
-                default: () => {
-                  return `<p class="w-fit" data-svelte-h="svelte-18rfhw8">Yes, Broughtby is free to setup and use. However, we charge a 10% commission fee on
+  )}</div> <h2 class="text-white w-full text-center" data-svelte-h="svelte-1ljl97">now have <span class="text-[#0052FF]">solutions</span></h2></section> <section class="w-full min-h-[100dvh] flex flex-col items-center relative gap-4 pt-[1rem]" data-svelte-h="svelte-hu1n1s"><div class="absolute z-0 gradient-mask-t-70 w-screen h-full"><div class="gradient-mask-b-70 w-full h-full"><div class="w-full h-full flex flex-col flex-grow bg-[url('$lib/bg3.svg')] bg-repeat"></div></div></div> <div class="relative z-1 gradient-mask-l-40"><div class="gradient-mask-r-90"><img alt="ClickURL"${add_attribute("src", ClickURL, 0)} class="w-[900px] lg:min-w-[20dvw] min-w-[80dvw] h-auto"></div></div> <div class="relative z-1 py-[3rem] w-full min-h-[30dvh] flex lg:flex-row gap-10 flex-col justify-between items-center"><div class="lg:w-1/2 w-full flex flex-col gap-9"><h3 class="w-full">Process payments <span class="drop-shadow-[0_4px_10px_#0052FFEE]">instantly</span></h3> <p class="w-full">We&#39;ll handle the invoices, payment processing, official receipts, and anything else your
+				sponsors need to have a hassle-free, on-the-books transaction.</p></div> <div></div></div> <div class="relative z-1 py-[3rem] w-full min-h-[30dvh] flex lg:flex-row gap-10 flex-col justify-between items-center"><div class="lg:w-1/2 w-full flex flex-col gap-9"><h3 class="w-full">Customize your <span class="drop-shadow-[0_4px_10px_#0052FFEE]">campaign page</span></h3> <p class="w-full">Create a professional &amp; sleek campaign page with an easily shareable short-link. Show your
+				sponsors you mean business.</p></div> <div></div></div></section> <faq id="faq" class="w-full flex flex-col items-center pt-[11rem] min-h-[100dvh] gap-[2rem]"><h2 class="text-white w-fit text-center" data-svelte-h="svelte-c3v2uk">Frequently Asked Questions</h2> ${validate_component(Root, "Accordion.Root").$$render($$result, { class: "w-full text-white" }, {}, {
+    default: () => {
+      return `${validate_component(Accordion_item, "Accordion.Item").$$render(
+        $$result,
+        {
+          value: "item-1",
+          class: "border-[#4e535eac]"
+        },
+        {},
+        {
+          default: () => {
+            return `${validate_component(Accordion_trigger, "Accordion.Trigger").$$render($$result, {}, {}, {
+              default: () => {
+                return `<p class="text-white w-fit text-left" data-svelte-h="svelte-1c836rt">Is Broughtby free?</p>`;
+              }
+            })} ${validate_component(Accordion_content, "Accordion.Content").$$render($$result, {}, {}, {
+              default: () => {
+                return `<p class="w-fit" data-svelte-h="svelte-18rfhw8">Yes, Broughtby is free to setup and use. However, we charge a 10% commission fee on
 					transactions made on our platform.</p>`;
-                }
-              })}`;
-            }
+              }
+            })}`;
           }
-        )} ${validate_component(Accordion_item, "Accordion.Item").$$render(
-          $$result,
-          {
-            value: "item-2",
-            class: "border-[#4e535eac]"
-          },
-          {},
-          {
-            default: () => {
-              return `${validate_component(Accordion_trigger, "Accordion.Trigger").$$render($$result, {}, {}, {
-                default: () => {
-                  return `<p class="text-white w-fit text-left" data-svelte-h="svelte-1u32be2">How can I share my Broughtby campaign to potential sponsors?</p>`;
-                }
-              })} ${validate_component(Accordion_content, "Accordion.Content").$$render($$result, {}, {}, {
-                default: () => {
-                  return `<p class="w-fit" data-svelte-h="svelte-mr0x20">You can customize a shortlink URL to point directly to your campaign website. It&#39;ll look
+        }
+      )} ${validate_component(Accordion_item, "Accordion.Item").$$render(
+        $$result,
+        {
+          value: "item-2",
+          class: "border-[#4e535eac]"
+        },
+        {},
+        {
+          default: () => {
+            return `${validate_component(Accordion_trigger, "Accordion.Trigger").$$render($$result, {}, {}, {
+              default: () => {
+                return `<p class="text-white w-fit text-left" data-svelte-h="svelte-1u32be2">How can I share my Broughtby campaign to potential sponsors?</p>`;
+              }
+            })} ${validate_component(Accordion_content, "Accordion.Content").$$render($$result, {}, {}, {
+              default: () => {
+                return `<p class="w-fit" data-svelte-h="svelte-mr0x20">You can customize a shortlink URL to point directly to your campaign website. It&#39;ll look
 					like this: <span class="font-['JetBrains_Mono'] bg-[#3c3c3c86]">yourevent.broughtby.us/</span></p>`;
-                }
-              })}`;
-            }
+              }
+            })}`;
           }
-        )} ${validate_component(Accordion_item, "Accordion.Item").$$render(
-          $$result,
-          {
-            value: "item-3",
-            class: "border-[#4e535eac]"
-          },
-          {},
-          {
-            default: () => {
-              return `${validate_component(Accordion_trigger, "Accordion.Trigger").$$render($$result, {}, {}, {
-                default: () => {
-                  return `<p class="text-white w-fit text-left" data-svelte-h="svelte-oiusvs">How are payments handled?</p>`;
-                }
-              })} ${validate_component(Accordion_content, "Accordion.Content").$$render($$result, {}, {}, {
-                default: () => {
-                  return `<p class="w-fit" data-svelte-h="svelte-19oukxe">From sponsors, we accept direct bank transfers. For your organization, we can send money
+        }
+      )} ${validate_component(Accordion_item, "Accordion.Item").$$render(
+        $$result,
+        {
+          value: "item-3",
+          class: "border-[#4e535eac]"
+        },
+        {},
+        {
+          default: () => {
+            return `${validate_component(Accordion_trigger, "Accordion.Trigger").$$render($$result, {}, {}, {
+              default: () => {
+                return `<p class="text-white w-fit text-left" data-svelte-h="svelte-oiusvs">How are payments handled?</p>`;
+              }
+            })} ${validate_component(Accordion_content, "Accordion.Content").$$render($$result, {}, {}, {
+              default: () => {
+                return `<p class="w-fit" data-svelte-h="svelte-19oukxe">From sponsors, we accept direct bank transfers. For your organization, we can send money
 					through your bank or e-wallets. We issue official receipts and invoices automatically at
 					no extra charge.</p>`;
-                }
-              })}`;
-            }
+              }
+            })}`;
           }
-        )} ${validate_component(Accordion_item, "Accordion.Item").$$render(
-          $$result,
-          {
-            value: "item-4",
-            class: "border-[#4e535eac]"
-          },
-          {},
-          {
-            default: () => {
-              return `${validate_component(Accordion_trigger, "Accordion.Trigger").$$render($$result, {}, {}, {
-                default: () => {
-                  return `<p class="text-white w-fit text-left" data-svelte-h="svelte-re3arh">How do I share event metrics with my sponsors?</p>`;
-                }
-              })} ${validate_component(Accordion_content, "Accordion.Content").$$render($$result, {}, {}, {
-                default: () => {
-                  return `<p class="w-fit" data-svelte-h="svelte-1yvw9sm">You can connect your execution platforms (i.e. Facebook/Instagram page, Zoom metrics) and
+        }
+      )} ${validate_component(Accordion_item, "Accordion.Item").$$render(
+        $$result,
+        {
+          value: "item-4",
+          class: "border-[#4e535eac]"
+        },
+        {},
+        {
+          default: () => {
+            return `${validate_component(Accordion_trigger, "Accordion.Trigger").$$render($$result, {}, {}, {
+              default: () => {
+                return `<p class="text-white w-fit text-left" data-svelte-h="svelte-re3arh">How do I share event metrics with my sponsors?</p>`;
+              }
+            })} ${validate_component(Accordion_content, "Accordion.Content").$$render($$result, {}, {}, {
+              default: () => {
+                return `<p class="w-fit" data-svelte-h="svelte-1yvw9sm">You can connect your execution platforms (i.e. Facebook/Instagram page, Zoom metrics) and
 					we collect reach &amp; audience data through their Analytics API. We provide dashboard
 					templates where you can set targets for each metric so your sponsors know what to expect.</p>`;
-                }
-              })}`;
-            }
+              }
+            })}`;
           }
-        )} ${validate_component(Accordion_item, "Accordion.Item").$$render(
-          $$result,
-          {
-            value: "item-5",
-            class: "border-[#4e535eac]"
-          },
-          {},
-          {
-            default: () => {
-              return `${validate_component(Accordion_trigger, "Accordion.Trigger").$$render($$result, {}, {}, {
-                default: () => {
-                  return `<p class="text-white w-fit text-left" data-svelte-h="svelte-mqjz3n">Who runs Broughtby?</p>`;
-                }
-              })} ${validate_component(Accordion_content, "Accordion.Content").$$render($$result, {}, {}, {
-                default: () => {
-                  return `<p class="w-fit" data-svelte-h="svelte-u5cg3a">We&#39;re a team of three student leaders with cumulatively 10 years of experience in external
+        }
+      )} ${validate_component(Accordion_item, "Accordion.Item").$$render(
+        $$result,
+        {
+          value: "item-5",
+          class: "border-[#4e535eac]"
+        },
+        {},
+        {
+          default: () => {
+            return `${validate_component(Accordion_trigger, "Accordion.Trigger").$$render($$result, {}, {}, {
+              default: () => {
+                return `<p class="text-white w-fit text-left" data-svelte-h="svelte-mqjz3n">Who runs Broughtby?</p>`;
+              }
+            })} ${validate_component(Accordion_content, "Accordion.Content").$$render($$result, {}, {}, {
+              default: () => {
+                return `<p class="w-fit" data-svelte-h="svelte-u5cg3a">We&#39;re a team of three student leaders with cumulatively 10 years of experience in external
 					affairs. We felt unsatisfied with how sponsorships were managed, so we decided to build a
 					tool to streamline the process and allow marketing teams to maximize their potential.</p>`;
-                }
-              })}`;
-            }
+              }
+            })}`;
           }
-        )}`;
-      }
+        }
+      )}`;
     }
-  )}</faq> <section id="contact" class="w-full min-h-[100dvh] flex flex-col items-center mt-[5rem]"><div class="w-screen h-[75dvh] left-0 bg-[#00000031] flex flex-col"><div class="px-[10dvw] p-[6rem] w-full min-h-[50dvh] flex lg:flex-row gap-10 flex-col justify-between"><div class="lg:w-[50%] w-full flex flex-col gap-9" data-svelte-h="svelte-1e94nbw"><h2 class="text-white w-full text-left">Market to your event&#39;s <span class="text-[#0052FF]">full potential</span></h2> <p class="w-full">Be the first in line when we launch Broughtby—the only tool you need to convince potential
-					sponsors that you&#39;ll deliver.</p></div> ${validate_component(Form_1, "Form").$$render($$result, { data: data.form }, {}, {})}</div></div> <footer class="w-screen h-[25dvh] px-[10dvw] py-[3rem] bg-[#00000058] flex lg:flex-row flex-col items-center justify-evenly" data-svelte-h="svelte-1ww5wc2"><div class="flex flex-col gap-3 items-center"><p class="text-sm w-full text-center">Biz Dev &amp; Operations</p> <div class="flex flex-col gap-1"><h5 class="w-full text-center">Paolo De los Santos</h5> <a class="w-full text-center font-normal inline_url" href="https://www.linkedin.com/in/paolodelossantos" target="__blank">@paolodelossantos</a></div></div> <div class="flex flex-col gap-3 items-center"><p class="text-sm w-full text-center">Tech &amp; Product</p> <div class="flex flex-col gap-1"><h5 class="w-full text-center">Jose Kristian Resabal</h5> <a class="w-full text-center font-normal inline_url" href="https://www.linkedin.com/in/jkresabal" target="__blank">@jkresabal</a></div></div> <div class="flex flex-col gap-3 items-center"><p class="text-sm w-full">Design &amp; Experience</p> <div class="flex flex-col gap-1"><h5 class="w-full text-center">Arki Mañago</h5> <a class="w-full text-center font-normal inline_url" href="https://www.linkedin.com/in/ark1tech" target="__blank">@ark1tech</a></div></div></footer></section>`;
+  })}</faq> <section id="contact" class="w-full min-h-[100dvh] flex flex-col items-center relative justify-between"><div class="flex-1 w-screen h-full absolute z-0" data-svelte-h="svelte-3xh6qm"><div class="glowbg h-full w-full"></div></div> <div class="relative z-1 pt-[11rem] pb-[3rem] w-full flex lg:flex-row gap-10 flex-col justify-between"><div class="lg:w-[50%] w-full flex flex-col gap-9" data-svelte-h="svelte-1udupxe"><h2 class="text-white w-full text-left">Market to your event&#39;s <span class="text-[#0052FF]">full potential</span></h2> <p class="w-full">Be the first in line when we launch Broughtby—the only tool you need to convince potential
+				sponsors that you&#39;ll deliver.</p></div> ${validate_component(Form_1, "Form").$$render($$result, { data: data.form }, {}, {})}</div> <div class="relative w-screen h-full bg-[#0e0e10]" data-svelte-h="svelte-1uacrh8"><div class="absolute z-0 gradient-mask-l-30 w-full h-full"><div class="h-full w-full gradient-mask-r-30"><div class="h-full w-full bg-[url('$lib/bg.svg')] border-t-[0.5px] border-[#e7e7e767]"></div></div></div> <footer class="relative z-1 w-full h-full py-[3rem] flex lg:flex-row flex-col items-center justify-evenly gap-5"><div class="flex flex-col gap-2 items-center z-2"><p class="text-sm w-full text-center">Biz Dev &amp; Operations</p> <div class="flex flex-col gap-1"><h5 class="w-full text-center">Paolo De los Santos</h5> <a class="w-full text-center font-normal inline_url" href="https://www.linkedin.com/in/paolodelossantos" target="__blank">@paolodelossantos</a></div></div> <div class="flex flex-col gap-2 items-center"><p class="text-sm w-full text-center">Tech &amp; Product</p> <div class="flex flex-col gap-1"><h5 class="w-full text-center">Jose Kristian Resabal</h5> <a class="w-full text-center font-normal inline_url" href="https://www.linkedin.com/in/jkresabal" target="__blank">@jkresabal</a></div></div> <div class="flex flex-col gap-2 items-center"><p class="text-sm w-full">Design &amp; Experience</p> <div class="flex flex-col gap-1"><h5 class="w-full text-center">Arki Mañago</h5> <a class="w-full text-center font-normal inline_url" href="https://www.linkedin.com/in/ark1tech" target="__blank">@ark1tech</a></div></div></footer></div></section>`;
 });
 export {
   Page as default
