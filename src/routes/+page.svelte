@@ -59,17 +59,17 @@
 		<Button licon={''} label={'Join the waitlist'} href={'#overview'} ricon={''} />
 	</div>
 	<div class="flex flex-col items-center pb-[3rem] gap-[2rem]">
-		<h5 class="w-fit text-center">Trusted by top universities in the Philippines</h5>
+		<h5 class="w-fit text-center">Join 14 orgs from the top universities</h5>
 		<Marquee />
 	</div>
 </header>
 
 <section class="w-full min-h-[90dvh] flex flex-col items-center pt-[5rem] gap-[3rem] justify-between">
-	<h2 class="text-white md:w-[60%] w-[80%] text-center">Your persistent problems</h2>
+	<h2 class="text-white md:w-[60%] w-[80%] text-center">Your problems...</h2>
 	<div class="flex flex-grow lg:flex-row flex-col w-full justify-evenly gap-[2rem]">
 		<TextCard
 			src={Receipt}
-			heading={"Can't issue official receipts"}
+			heading={'Can\'t issue official receipts'}
 			content={'Your org needs to be SEC-registered, but that comes with documents and taxes. Too much bureaucracy.'}
 		/>
 		<TextCard
@@ -79,7 +79,7 @@
 		/>
 		<TextCard
 			src={Puzzle}
-			heading={'Hard payment methods'}
+			heading={'Can\'t support payment methods'}
 			content={"The payments are being sent to some member's bank account, or you're collecting cheques from far-away company offices."}
 		/>
 	</div>
@@ -141,12 +141,23 @@
 			>
 			<Accordion.Content
 				><p class="w-fit">
-					Yes, Broughtby is free to setup and use. However, we charge a 10% commission fee on
+					Yes, Broughtby is free to setup and use. However, we charge a 7% processing fee on
 					transactions made on our platform.
 				</p></Accordion.Content
 			>
 		</Accordion.Item>
 		<Accordion.Item value="item-2" class="border-[#4e535eac]">
+			<Accordion.Trigger
+				><p class="text-white w-fit text-left">How do I set up my campaign?</p></Accordion.Trigger
+			>
+			<Accordion.Content
+				><p class="w-fit">
+					Once you are granted access to our platform, you can customize your campaign using 
+					our intuitive drag-and-drop campaign editor. 
+				</p></Accordion.Content
+			>
+		</Accordion.Item>
+		<Accordion.Item value="item-3" class="border-[#4e535eac]">
 			<Accordion.Trigger
 				><p class="text-white w-fit text-left">
 					How can I share my Broughtby campaign to potential sponsors?
@@ -161,29 +172,15 @@
 				</p></Accordion.Content
 			>
 		</Accordion.Item>
-		<Accordion.Item value="item-3" class="border-[#4e535eac]">
+		<Accordion.Item value="item-4" class="border-[#4e535eac]">
 			<Accordion.Trigger
 				><p class="text-white w-fit text-left">How are payments handled?</p></Accordion.Trigger
 			>
 			<Accordion.Content
 				><p class="w-fit">
 					From sponsors, we accept direct bank transfers. For your organization, we can send money
-					through your bank or e-wallets. We issue official receipts and invoices automatically at
+					through your bank account or e-wallet. We issue official receipts and invoices automatically at
 					no extra charge.
-				</p></Accordion.Content
-			>
-		</Accordion.Item>
-		<Accordion.Item value="item-4" class="border-[#4e535eac]">
-			<Accordion.Trigger
-				><p class="text-white w-fit text-left">
-					How do I share event metrics with my sponsors?
-				</p></Accordion.Trigger
-			>
-			<Accordion.Content
-				><p class="w-fit">
-					You can connect your execution platforms (i.e. Facebook/Instagram page, Zoom metrics) and
-					we collect reach & audience data through their Analytics API. We provide dashboard
-					templates where you can set targets for each metric so your sponsors know what to expect.
 				</p></Accordion.Content
 			>
 		</Accordion.Item>
@@ -193,9 +190,9 @@
 			>
 			<Accordion.Content
 				><p class="w-fit">
-					We're a team of three student leaders with cumulatively 10 years of experience in external
-					affairs. We felt unsatisfied with how sponsorships were managed, so we decided to build a
-					tool to streamline the process and allow marketing teams to maximize their potential.
+					We're a team of three student leaders with cumulatively 10 years of managing sponsorships
+					in unincorporated organizations. We're unsatisfied with the current workarounds to this
+					problem, and that's why we're building a platform to fix payments once and for all.
 				</p></Accordion.Content
 			>
 		</Accordion.Item>
@@ -214,11 +211,11 @@
 	>
 		<div class="lg:w-[50%] w-full flex flex-col gap-9">
 			<h2 class="text-white w-full text-left">
-				Market to your event's <span class="text-[#0052FF]">full potential</span>
+				Unlock your org's <span class="text-[#0052FF]">full potential</span>
 			</h2>
 			<p class="w-full">
-				Be the first in line when we launch Broughtby—the only tool you need to convince potential
-				sponsors that you'll deliver.
+				Be the first in line when we launch Broughtby—the only platform you need to
+
 			</p>
 		</div>
 		<Form data={data.form} />
