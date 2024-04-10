@@ -96,7 +96,7 @@
 	</h2>
 </section>
 <section class="w-full min-h-[100dvh] flex flex-col items-center relative gap-4 justify-start">
-	<div class="absolute z-0 gradient-mask-t-70 w-screen h-full top-[2rem]">
+	<div class="absolute z-0 gradient-mask-t-70 w-screen h-full">
 		<div class="gradient-mask-b-70 w-full h-full">
 			<div class="w-full h-full flex flex-col flex-grow bg-[url('$lib/bg3.svg')] bg-repeat"></div>
 		</div>
