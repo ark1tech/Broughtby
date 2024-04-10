@@ -14,7 +14,7 @@
 		const anchor = document.getElementById(anchorId);
 		window.scrollTo({
 			// @ts-ignore
-			top: anchor.offsetTop - 30,
+			top: anchor.offsetTop + 20,
 			behavior: 'smooth'
 		});
 	}
