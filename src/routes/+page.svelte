@@ -212,11 +212,11 @@
 	>
 		<div class="lg:w-[50%] w-full flex flex-col gap-9">
 			<h2 class="text-white w-full text-left">
-				Market to your event's <span class="text-[#0052FF]">full potential</span>
+				Maximize your <span class="text-[#0052FF]">event revenue</span>
 			</h2>
 			<p class="w-full">
 				Be the first in line when we launch Broughtby—the only platform you need to manage
-				sponsor payments.
+				sponsor payments and market to your event's full potential.
 			</p>
 		</div>
 		<Form data={data.form} />
