@@ -83,23 +83,23 @@
 	<h2 class="text-white w-full text-center">
 		now have <span class="text-[#0052FF]">solutions</span>
 	</h2>
-	<div class="gradient-mask-l-40">
-		<div class="gradient-mask-r-90">
-			<img alt="ClickURL" src={ClickURL} class="w-[900px] lg:min-w-[20dvw] min-w-[80dvw] h-auto" />
-		</div>
-	</div>
 </section>
 
-<section class="w-full min-h-[100dvh] flex flex-col items-center relative">
-	<div class="absolute z-0 h-[100dvh] gradient-mask-t-70 w-screen">
+<section class="w-full min-h-[100dvh] flex flex-col items-center relative gap-0">
+	<div class="absolute z-0 top-5 h-[100dvh] gradient-mask-t-70 w-screen">
 		<div class="gradient-mask-b-70 w-full h-full">
 			<div
 				class="w-full h-full flex flex-col flex-grow bg-[url('$lib/bg2.svg')] bg-blend-overlay"
 			></div>
 		</div>
 	</div>
+	<div class="relative z-1 gradient-mask-l-40">
+		<div class="gradient-mask-r-90">
+			<img alt="ClickURL" src={ClickURL} class="w-[900px] lg:min-w-[20dvw] min-w-[80dvw] h-auto" />
+		</div>
+	</div>
 	<div
-		class="relative z-1 px-[10dvw] py-[3rem] w-full min-h-[50dvh] flex lg:flex-row gap-10 flex-col justify-between items-center"
+		class="relative z-1 px-[10dvw] py-[3rem] w-full min-h-[30dvh] flex lg:flex-row gap-10 flex-col justify-between items-center"
 	>
 		<div class="lg:w-1/2 w-full flex flex-col gap-9">
 			<h3 class="w-full">
@@ -113,7 +113,7 @@
 		<div></div>
 	</div>
 	<div
-		class="relative z-1 px-[10dvw] py-[3rem] w-full min-h-[50dvh] flex lg:flex-row gap-10 flex-col justify-between items-center"
+		class="relative z-1 px-[10dvw] py-[3rem] w-full min-h-[30dvh] flex lg:flex-row gap-10 flex-col justify-between items-center"
 	>
 		<div class="lg:w-1/2 w-full flex flex-col gap-9">
 			<h3 class="w-full">
@@ -200,8 +200,8 @@
 </faq>
 
 <section id="contact" class="w-full min-h-[100dvh] flex flex-col items-center relative justify-between">
-	<div class="flex-1 w-screen h-full gradient-mask-t-70 absolute z-0">
-		<div class=" bg-[#00000031] h-full w-full"></div>
+	<div class="flex-1 w-screen h-full  absolute z-0">
+		<div class=" glowbg h-full w-full"></div>
 	</div>
 	<div
 		class="relative z-1 pt-[11rem] pb-[3rem] px-[10dvw] w-full flex lg:flex-row gap-10 flex-col justify-between"
@@ -217,7 +217,7 @@
 		</div>
 		<Form data={data.form} />
 	</div>
-	<div class="relative w-screen h-full">
+	<div class="relative w-screen h-full bg-[#10111697]">
 		<div class="absolute z-0 gradient-mask-l-30  w-full h-full">
 			<div class="h-full w-full gradient-mask-r-30">
 				<div class="h-full w-full bg-[url('$lib/bg.svg')] border-t-[0.5px] border-[#e7e7e767]"></div>
