@@ -68,7 +68,7 @@
 <section
 	class="w-full min-h-[90dvh] flex flex-col items-center pt-[5rem] gap-[3rem] justify-between"
 >
-	<h2 class="text-white md:w-[60%] w-[80%] text-center">Your persistent problems</h2>
+	<h2 class="text-white md:w-[60%] w-[80%] text-center">Your persistent problems...</h2>
 	<div class="flex flex-grow lg:flex-row flex-col w-full justify-evenly gap-[2rem]">
 		<TextCard
 			src={Receipt}
@@ -212,11 +212,11 @@
 	>
 		<div class="lg:w-[50%] w-full flex flex-col gap-9">
 			<h2 class="text-white w-full text-left">
-				Unlock your org's <span class="text-[#0052FF]">full potential</span>
+				Market to your event's <span class="text-[#0052FF]">full potential</span>
 			</h2>
 			<p class="w-full">
-				Be the first in line when we launch Broughtby—the only platform you need to
-
+				Be the first in line when we launch Broughtby—the only platform you need to manage
+				sponsor payments.
 			</p>
 		</div>
 		<Form data={data.form} />
