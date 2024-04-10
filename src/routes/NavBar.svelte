@@ -23,8 +23,8 @@
 <div class="w-full flex flex-col items-center">
 	<header class="flex flex-row justify-between items-center min-w-full max-w-[1500px]">
 		<div class="flex-none">
-			<a href="/">
-				<img src={logo} alt="broughtby" />
+			<a href="#home" on:click={handleAnchorClick}>
+				<img src={logo} alt="broughtby"  />
 			</a>
 		</div>
 		<nav class="">

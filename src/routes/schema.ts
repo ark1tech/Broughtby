@@ -6,7 +6,7 @@ export const formSchema = z.object({
         .string()
         .min(1, { message: "This field has to be filled." })
         .email("This is not a valid email."),
-    message: z.string().min(1).max(250)
+    org: z.string().min(1).max(250)
   });
 
 export type FormSchema = typeof formSchema;

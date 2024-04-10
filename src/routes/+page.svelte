@@ -47,7 +47,7 @@
 	<meta name="twitter:card" content="../lib/meta.png" />
 </svelte:head>
 
-<header
+<header id="home"
 	class="flex flex-col items-center justify-between gap-[3rem] pt-[8rem] min-h-[100dvh] w-full"
 >
 	<div class="flex flex-col items-center gap-[2rem] w-full">
@@ -103,9 +103,9 @@
 		</div>
 	</div>
 	<div
-		class="relative z-1 py-[3rem] w-full min-h-[30dvh] flex lg:flex-row gap-10 flex-col justify-between items-center"
+		class="relative z-1 py-[2rem] w-full min-h-[20dvh] flex lg:flex-col gap-0 flex-col justify-between items-center"
 	>
-		<div class="lg:w-1/2 w-full flex flex-col gap-9">
+		<div class="lg:w-3/4 w-full flex flex-col gap-6">
 			<h3 class="w-full">
 				Process payments <span class="drop-shadow-[0_4px_10px_#0052FFEE]">instantly</span>
 			</h3>
@@ -114,12 +114,11 @@
 				sponsors need to have a hassle-free, on-the-books transaction.
 			</p>
 		</div>
-		<div></div>
 	</div>
 	<div
-		class="relative z-1 py-[3rem] w-full min-h-[30dvh] flex lg:flex-row gap-10 flex-col justify-between items-center"
+		class="relative z-1 py-[2rem] w-full min-h-[20dvh] flex lg:flex-col gap-10 flex-col justify-between items-center"
 	>
-		<div class="lg:w-1/2 w-full flex flex-col gap-9">
+		<div class="lg:w-3/4 w-full flex flex-col gap-6">
 			<h3 class="w-full">
 				Customize your <span class="drop-shadow-[0_4px_10px_#0052FFEE]">campaign page</span>
 			</h3>
@@ -128,7 +127,30 @@
 				sponsors you mean business.
 			</p>
 		</div>
-		<div></div>
+	</div>
+	<div
+		class="relative z-1 py-[2rem] w-full min-h-[20dvh] flex lg:flex-col gap-10 flex-col justify-between items-center"
+	>
+		<div class="lg:w-3/4 w-full flex flex-col gap-6">
+			<h3 class="w-full">
+				Craft your campaign with our proprietary <span class="drop-shadow-[0_4px_10px_#0052FFEE]">AI writing assistant</span>
+			</h3>
+			<p class="w-full">
+				Write marketing copy that communicates your event's background and goals clearly, supercharged by AI.
+			</p>
+		</div>
+	</div>
+	<div
+		class="relative z-1 py-[2rem] w-full min-h-[20dvh] flex lg:flex-col gap-10 flex-col justify-between items-center"
+	>
+		<div class="lg:w-3/4 w-full flex flex-col gap-6">
+			<h3 class="w-full">
+				Report your event <span class="drop-shadow-[0_4px_10px_#0052FFEE]">metrics in real-time</span> 
+			</h3>
+			<p class="w-full">
+				Connect your socials to show your reach and engagement. Prove your event was worth sponsoring so they come back next year.
+			</p>
+		</div>
 	</div>
 </section>
 
