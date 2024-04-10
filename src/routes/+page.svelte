@@ -88,8 +88,11 @@
 			content={"The payments are being sent to some member's bank account, or you're collecting cheques from far-away company offices."}
 		/>
 	</div>
+	<div class="w-full flex flex-col items-center">
+		<img alt="" src={Connect} class="h-auto w-[20px] my-[-1rem]" />
+	</div>
 	<h2 class="text-white w-full text-center">
-		now have <span class="text-[#0052FF]">solutions</span>
+		now have snazzy <span class="text-[#0052FF]">solutions</span>
 	</h2>
 </section>
 <section class="w-full min-h-[100dvh] flex flex-col items-center relative gap-4 justify-start">
@@ -99,9 +102,6 @@
 		</div>
 	</div>
 	<div class="relative z-1 flex flex-col items-center justify-start gap-0">
-		<div class="w-full flex flex-col items-center mt-[20px]">
-			<img alt="" src={Connect} class="h-auto w-[20px]" />
-		</div>
 		<div class="relative z-1 gradient-mask-l-40">
 			<div class="gradient-mask-r-90">
 				<img
