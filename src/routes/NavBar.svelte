@@ -31,7 +31,7 @@
 			<ul class="flex-row justify-between font-light gap-[2.6rem] md:flex hidden items-center nav">
 				<li><a href="#faq" on:click={handleAnchorClick}> FAQs </a></li>
 				<li><a href="#contact" on:click={handleAnchorClick}> Contact Us </a></li>
-				<li><Button licon={''} label={'Join the waitlist'} href={'#overview'} ricon={''} /></li>
+				<li><Button licon={''} label={'Join the waitlist'} href={'#contact'} ricon={''} /></li>
 			</ul>
 			<div class="md:hidden block text-white">
 				{@html Hamburger_Menu}

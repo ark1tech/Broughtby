@@ -57,7 +57,7 @@
 		<p class="text-center">
 			A payment solution built for student org events—no bureaucracy required.
 		</p>
-		<Button licon={''} label={'Join the waitlist'} href={'#overview'} ricon={''} />
+		<Button licon={''} label={'Join the waitlist'} href={'#contact'} ricon={''} />
 	</div>
 	<div class="flex flex-col items-center pb-[3rem] gap-[2rem]">
 		<h5 class="w-fit text-center">Join 14 orgs from the top universities</h5>

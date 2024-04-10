@@ -49,10 +49,15 @@
 						<Form.FieldErrors class={'text-red-400'} />
 					</Form.Field>
 				</div>
-				<Form.Field {form} name="message" class="text-white">
+				<Form.Field {form} name="organization" class="text-white xlg:w-[45%] w-full">
 					<Form.Control let:attrs>
-						<Form.Label><h5>Message</h5></Form.Label>
-						<Textarea {...attrs} bind:value={$formData.message} class="border-[#4e535eac]" placeholder="Your message"/>
+						<Form.Label><h5>Organization</h5></Form.Label>
+						<Input
+						{...attrs}
+						bind:value={$formData.org}
+						placeholder={'Association of John Does'}
+						class="border-[#4e535eac]"
+						/>
 					</Form.Control>
 					<Form.FieldErrors class={'text-red-400'} />
 				</Form.Field>
