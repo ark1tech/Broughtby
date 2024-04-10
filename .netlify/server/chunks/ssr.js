@@ -190,9 +190,9 @@ export {
   add_attribute as a,
   escape_object as b,
   create_ssr_component as c,
-  escape_attribute_value as d,
+  each as d,
   escape as e,
-  each as f,
+  escape_attribute_value as f,
   missing_component as m,
   spread as s,
   validate_component as v

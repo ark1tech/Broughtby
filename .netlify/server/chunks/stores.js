@@ -1,4 +1,4 @@
-import { b as getContext } from "./lifecycle.js";
+import { g as getContext } from "./lifecycle.js";
 import "./exports.js";
 import "devalue";
 function get(key, parse = JSON.parse) {

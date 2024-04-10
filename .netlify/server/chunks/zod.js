@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { B as BROWSER, d as derived, w as writable, a as readonly } from "./index.js";
 import { i as invalidateAll, a as applyAction, p as page, n as navigating } from "./stores.js";
-import { i as set_current_component, r as run_all, f as current_component, o as onDestroy, g as get_store_value } from "./lifecycle.js";
+import { i as set_current_component, r as run_all, f as current_component, o as onDestroy, b as get_store_value } from "./lifecycle.js";
 import * as devalue from "devalue";
 import { stringify, parse } from "devalue";
 import justClone from "just-clone";
