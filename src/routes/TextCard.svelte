@@ -7,7 +7,7 @@
 
 <div class ="flex-[1_1_0%]">
 	<div class="w-full h-full rounded-[0.75rem] overflow-clip bg-gradient-to-b from-[#ffffff2c] via-[#a2a2a220] to-[#a2a2a200] p-[0.065rem]">
-		<div class="w-full h-full p-10 flex flex-col gap-[1rem] bg-[#19191b] rounded-[0.75rem] ">
+		<div class="w-full h-full p-10 flex flex-col gap-[1rem] bg-[#19191b] hover:bg-[#202023]  ease-linear transition-all rounded-[0.75rem]">
 			<h4 class = "w-full h-1/3">{heading}</h4>
 			<p class="w-full">{content}</p>
 		</div>

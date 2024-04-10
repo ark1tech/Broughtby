@@ -20,13 +20,13 @@
 <div
 	class="lg:w-[45%] h-full rounded-[0.75rem] overflow-clip bg-gradient-to-b from-[#ffffff2c] via-[#a2a2a220] to-[#a2a2a200] p-[0.065rem]"
 >
-	<div class="w-full h-full p-10 flex flex-col gap-[1rem] bg-[#19191b] rounded-[0.75rem]">
+	<div class="w-full h-full p-10 flex flex-col gap-[1rem] bg-[#19191b] hover:bg-[#202023]  ease-linear transition-all rounded-[0.75rem]">
 		<form method="POST" use:enhance class=" flex flex-col gap-6">
-			<div class="flex flex-col gap-4">
-				<div class="flex flex-row w-full justify-between">
-					<Form.Field {form} name="name" class="text-white w-[45%]">
+			<div class="flex flex-col gap-2">
+				<div class="flex xlg:flex-row flex-col w-full justify-between gap-2">
+					<Form.Field {form} name="name" class="text-white xlg:w-[45%] w-full">
 						<Form.Control let:attrs>
-							<Form.Label><p class="text-white">Name</p></Form.Label>
+							<Form.Label><h5>Name</h5></Form.Label>
 							<Input
 								{...attrs}
 								bind:value={$formData.name}
@@ -36,9 +36,9 @@
 						</Form.Control>
 						<Form.FieldErrors class={'text-red-400'} />
 					</Form.Field>
-					<Form.Field {form} name="email" class="text-white w-[45%]">
+					<Form.Field {form} name="email" class="text-white xlg:w-[45%] w-full">
 						<Form.Control let:attrs>
-							<Form.Label><p class="text-white">Email</p></Form.Label>
+							<Form.Label><h5>Email</h5></Form.Label>
 							<Input
 								{...attrs}
 								bind:value={$formData.email}
@@ -51,8 +51,8 @@
 				</div>
 				<Form.Field {form} name="message" class="text-white">
 					<Form.Control let:attrs>
-						<Form.Label><p class="text-white">Message</p></Form.Label>
-						<Textarea {...attrs} bind:value={$formData.message} class="border-[#4e535eac]" />
+						<Form.Label><h5>Message</h5></Form.Label>
+						<Textarea {...attrs} bind:value={$formData.message} class="border-[#4e535eac]" placeholder="Your message"/>
 					</Form.Control>
 					<Form.FieldErrors class={'text-red-400'} />
 				</Form.Field>

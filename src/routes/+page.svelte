@@ -3,7 +3,8 @@
 	import Marquee from './Marquee.svelte';
 	import Button from './Button.svelte';
 	import TextCard from './TextCard.svelte';
-	import ClickURL from '$lib/click3.svg';
+	import ClickURL from '$lib/click.png';
+	import BGFooter from '$lib/bg.svg';
 
 	const Right_Arrow = `<svg  xmlns="http://www.w3.org/2000/svg"  width="20"  height="20"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" /></svg>`;
 
@@ -78,47 +79,52 @@
 	</div>
 </section>
 
-<section class="w-full flex flex-col items-center justify-center p-[5rem]">
-	<h2 class="text-white w-fit text-center">
+<section class="w-full flex flex-col items-center justify-center pt-[2.5rem] pb-[0rem]">
+	<h2 class="text-white w-full text-center">
 		now have <span class="text-[#0052FF]">solutions</span>
 	</h2>
 	<div class="gradient-mask-l-40">
-		<div class="gradient-mask-r-80 relative">
-			<img alt="ClickURL" src={ClickURL} class="w-[800px] h-auto" />
+		<div class="gradient-mask-r-90">
+			<img alt="ClickURL" src={ClickURL} class="w-[900px] lg:min-w-[20dvw] min-w-[80dvw] h-auto" />
 		</div>
 	</div>
 </section>
 
-<section class="w-full min-h-[100dvh] flex flex-col items-center">
-	<div class="w-screen bg-[#00000031] flex flex-col flex-grow">
-		<div
-			class="px-[10dvw] py-[3rem] w-full min-h-[50dvh] flex lg:flex-row gap-10 flex-col justify-between items-center"
-		>
-			<div class="lg:w-1/2 w-full flex flex-col gap-9">
-				<h3 class="w-full">
-					Process payments <span class="drop-shadow-[0_4px_10px_#0052FFEE]">instantly</span>
-				</h3>
-				<p class="w-full">
-					We'll handle the invoices, payment processing, official receipts, and anything else your
-					sponsors need to have a hassle-free, on-the-books transaction.
-				</p>
-			</div>
-			<div></div>
+<section class="w-full min-h-[100dvh] flex flex-col items-center relative">
+	<div class="absolute z-0 h-[100dvh] gradient-mask-t-70 w-screen">
+		<div class="gradient-mask-b-70 w-full h-full">
+			<div
+				class="w-full h-full flex flex-col flex-grow bg-[url('$lib/bg2.svg')] bg-blend-overlay"
+			></div>
 		</div>
-		<div
-			class="px-[10dvw] py-[3rem]  w-full min-h-[50dvh] flex lg:flex-row gap-10 flex-col justify-between items-center"
-		>
-			<div class="lg:w-1/2 w-full flex flex-col gap-9">
-				<h3 class="w-full">
-					Customize your <span class="drop-shadow-[0_4px_10px_#0052FFEE]">campaign page</span>
-				</h3>
-				<p class="w-full">
-					Create a professional & sleek campaign page with an easily shareable short-link. Show your
-					sponsors you mean business.
-				</p>
-			</div>
-			<div></div>
+	</div>
+	<div
+		class="relative z-1 px-[10dvw] py-[3rem] w-full min-h-[50dvh] flex lg:flex-row gap-10 flex-col justify-between items-center"
+	>
+		<div class="lg:w-1/2 w-full flex flex-col gap-9">
+			<h3 class="w-full">
+				Process payments <span class="drop-shadow-[0_4px_10px_#0052FFEE]">instantly</span>
+			</h3>
+			<p class="w-full">
+				We'll handle the invoices, payment processing, official receipts, and anything else your
+				sponsors need to have a hassle-free, on-the-books transaction.
+			</p>
 		</div>
+		<div></div>
+	</div>
+	<div
+		class="relative z-1 px-[10dvw] py-[3rem] w-full min-h-[50dvh] flex lg:flex-row gap-10 flex-col justify-between items-center"
+	>
+		<div class="lg:w-1/2 w-full flex flex-col gap-9">
+			<h3 class="w-full">
+				Customize your <span class="drop-shadow-[0_4px_10px_#0052FFEE]">campaign page</span>
+			</h3>
+			<p class="w-full">
+				Create a professional & sleek campaign page with an easily shareable short-link. Show your
+				sponsors you mean business.
+			</p>
+		</div>
+		<div></div>
 	</div>
 </section>
 
@@ -193,62 +199,66 @@
 	</Accordion.Root>
 </faq>
 
-<section id="contact" class="w-full min-h-[100dvh] flex flex-col items-center">
-	<div class="w-screen bg-[#00000031] flex flex-col flex-grow pt-[11rem] pb-[3rem]">
-		<div
-			class="px-[10dvw] w-full min-h-[50dvh] flex lg:flex-row gap-10 flex-col justify-between"
-		>
-			<div class="lg:w-[50%] w-full flex flex-col gap-9">
-				<h2 class="text-white w-full text-left">
-					Market to your event's <span class="text-[#0052FF]">full potential</span>
-				</h2>
-				<p class="w-full">
-					Be the first in line when we launch Broughtby—the only tool you need to convince potential
-					sponsors that you'll deliver.
-				</p>
-			</div>
-			<Form data={data.form} />
-		</div>
+<section id="contact" class="w-full min-h-[100dvh] flex flex-col items-center relative justify-between">
+	<div class="flex-1 w-screen h-full gradient-mask-t-70 absolute z-0">
+		<div class=" bg-[#00000031] h-full w-full"></div>
 	</div>
-	<div class="gradient-mask-l-60 ">
-		<div class="gradient-mask-r-60">
-			<footer
-				class="w-screen px-[10dvw] py-[3rem] bg-[#00000031] flex lg:flex-row flex-col items-center justify-evenly gap-5 border-t-[0.5px] border-[#e7e7e767]"
-			>
-				<div class="flex flex-col gap-2 items-center z-2">
-					<p class="text-sm w-full text-center">Biz Dev & Operations</p>
-					<div class="flex flex-col gap-1">
-						<h5 class="w-full text-center">Paolo De los Santos</h5>
-						<a
-							class="w-full text-center font-normal inline_url"
-							href="https://www.linkedin.com/in/paolodelossantos"
-							target="__blank">@paolodelossantos</a
-						>
-					</div>
-				</div>
-				<div class="flex flex-col gap-2 items-center">
-					<p class="text-sm w-full text-center">Tech & Product</p>
-					<div class="flex flex-col gap-1">
-						<h5 class="w-full text-center">Jose Kristian Resabal</h5>
-						<a
-							class="w-full text-center font-normal inline_url"
-							href="https://www.linkedin.com/in/jkresabal"
-							target="__blank">@jkresabal</a
-						>
-					</div>
-				</div>
-				<div class="flex flex-col gap-2 items-center">
-					<p class="text-sm w-full">Design & Experience</p>
-					<div class="flex flex-col gap-1">
-						<h5 class="w-full text-center">Arki Mañago</h5>
-						<a
-							class="w-full text-center font-normal inline_url"
-							href="https://www.linkedin.com/in/ark1tech"
-							target="__blank">@ark1tech</a
-						>
-					</div>
-				</div>
-			</footer>
+	<div
+		class="relative z-1 pt-[11rem] pb-[3rem] px-[10dvw] w-full flex lg:flex-row gap-10 flex-col justify-between"
+	>
+		<div class="lg:w-[50%] w-full flex flex-col gap-9">
+			<h2 class="text-white w-full text-left">
+				Market to your event's <span class="text-[#0052FF]">full potential</span>
+			</h2>
+			<p class="w-full">
+				Be the first in line when we launch Broughtby—the only tool you need to convince potential
+				sponsors that you'll deliver.
+			</p>
 		</div>
+		<Form data={data.form} />
+	</div>
+	<div class="relative w-screen h-full">
+		<div class="absolute z-0 gradient-mask-l-30  w-full h-full">
+			<div class="h-full w-full gradient-mask-r-30">
+				<div class="h-full w-full bg-[url('$lib/bg.svg')] border-t-[0.5px] border-[#e7e7e767]"></div>
+			</div>
+		</div>
+		<footer
+			class="relative z-1 w-full h-full py-[3rem] flex lg:flex-row flex-col items-center justify-evenly gap-5"
+		>
+			<div class="flex flex-col gap-2 items-center z-2">
+				<p class="text-sm w-full text-center">Biz Dev & Operations</p>
+				<div class="flex flex-col gap-1">
+					<h5 class="w-full text-center">Paolo De los Santos</h5>
+					<a
+						class="w-full text-center font-normal inline_url"
+						href="https://www.linkedin.com/in/paolodelossantos"
+						target="__blank">@paolodelossantos</a
+					>
+				</div>
+			</div>
+			<div class="flex flex-col gap-2 items-center">
+				<p class="text-sm w-full text-center">Tech & Product</p>
+				<div class="flex flex-col gap-1">
+					<h5 class="w-full text-center">Jose Kristian Resabal</h5>
+					<a
+						class="w-full text-center font-normal inline_url"
+						href="https://www.linkedin.com/in/jkresabal"
+						target="__blank">@jkresabal</a
+					>
+				</div>
+			</div>
+			<div class="flex flex-col gap-2 items-center">
+				<p class="text-sm w-full">Design & Experience</p>
+				<div class="flex flex-col gap-1">
+					<h5 class="w-full text-center">Arki Mañago</h5>
+					<a
+						class="w-full text-center font-normal inline_url"
+						href="https://www.linkedin.com/in/ark1tech"
+						target="__blank">@ark1tech</a
+					>
+				</div>
+			</div>
+		</footer>
 	</div>
 </section>
