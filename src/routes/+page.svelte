@@ -99,7 +99,7 @@
 		</div>
 	</div>
 	<div class="relative z-1 flex flex-col items-center justify-start gap-0">
-		<div class="w-full flex flex-col items-center mt-[30px]">
+		<div class="w-full flex flex-col items-center mt-[20px]">
 			<img alt="" src={Connect} class="h-auto w-[20px]" />
 		</div>
 		<div class="relative z-1 gradient-mask-l-40">
@@ -107,7 +107,7 @@
 				<img
 					alt="ClickURL"
 					src={ClickURL}
-					class="w-[900px] lg:min-w-[20dvw] min-w-[80dvw] h-auto mt-[-1rem]"
+					class="w-[900px] lg:min-w-[20dvw] min-w-[80dvw] h-auto mt-[-10px]"
 				/>
 			</div>
 		</div>
