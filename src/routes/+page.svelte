@@ -217,7 +217,7 @@
 		</div>
 		<Form data={data.form} />
 	</div>
-	<div class="relative w-screen h-full bg-[#10111697]">
+	<div class="relative w-screen h-full bg-[#0e0e10]">
 		<div class="absolute z-0 gradient-mask-l-30  w-full h-full">
 			<div class="h-full w-full gradient-mask-r-30">
 				<div class="h-full w-full bg-[url('$lib/bg.svg')] border-t-[0.5px] border-[#e7e7e767]"></div>
