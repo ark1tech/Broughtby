@@ -48,19 +48,19 @@
 						</Form.Control>
 						<Form.FieldErrors class={'text-red-400'} />
 					</Form.Field>
+					<Form.Field {form} name="org" class="text-white xlg:w-[45%] w-full">
+						<Form.Control let:attrs>
+							<Form.Label><h5>Organization</h5></Form.Label>
+							<Input
+							{...attrs}
+							bind:value={$formData.org}
+							placeholder={'Association of John Does'}
+							class="border-[#4e535eac]"
+							/>
+						</Form.Control>
+						<Form.FieldErrors class={'text-red-400'} />
+					</Form.Field>
 				</div>
-				<Form.Field {form} name="organization" class="text-white xlg:w-[45%] w-full">
-					<Form.Control let:attrs>
-						<Form.Label><h5>Organization</h5></Form.Label>
-						<Input
-						{...attrs}
-						bind:value={$formData.org}
-						placeholder={'Association of John Does'}
-						class="border-[#4e535eac]"
-						/>
-					</Form.Control>
-					<Form.FieldErrors class={'text-red-400'} />
-				</Form.Field>
 			</div>
 			<Form.Button></Form.Button>
 		</form>
