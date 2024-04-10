@@ -5,6 +5,9 @@
 	import TextCard from './TextCard.svelte';
 	import ClickURL from '$lib/click.png';
 	import BGFooter from '$lib/bg.svg';
+	import Receipt from '$lib/receipt.svg';
+	import Slow from '$lib/zzz.svg';
+	import Puzzle from '$lib/mood-puzzled.svg';
 
 	const Right_Arrow = `<svg  xmlns="http://www.w3.org/2000/svg"  width="20"  height="20"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" /></svg>`;
 
@@ -61,31 +64,31 @@
 	</div>
 </header>
 
-<section class="w-full flex flex-col items-center pt-[5rem] gap-[2.5rem]">
+<section class="w-full min-h-[90dvh] flex flex-col items-center pt-[5rem] gap-[3rem] justify-between">
 	<h2 class="text-white md:w-[60%] w-[80%] text-center">Your persistent problems</h2>
-	<div class="flex lg:flex-row flex-col w-full justify-evenly gap-[2rem]">
+	<div class="flex flex-grow lg:flex-row flex-col w-full justify-evenly gap-[2rem]">
 		<TextCard
+			src={Receipt}
 			heading={"Can't issue official receipts"}
 			content={'Your org needs to be SEC-registered, but that comes with documents and taxes. Too much bureaucracy.'}
 		/>
 		<TextCard
+			src={Slow}
 			heading={'Slow passthrough services'}
 			content={"You partner with an incorporated org to issue receipts, but they haven't replied to your emails in weeks."}
 		/>
 		<TextCard
-			heading={'Supporting payment methods is hard'}
+			src={Puzzle}
+			heading={'Hard payment methods'}
 			content={"The payments are being sent to some member's bank account, or you're collecting cheques from far-away company offices."}
 		/>
 	</div>
-</section>
-
-<section class="w-full flex flex-col items-center justify-center pt-[2.5rem] pb-[0rem]">
 	<h2 class="text-white w-full text-center">
 		now have <span class="text-[#0052FF]">solutions</span>
 	</h2>
 </section>
 
-<section class="w-full min-h-[100dvh] flex flex-col items-center relative gap-4">
+<section class="w-full min-h-[100dvh] flex flex-col items-center relative gap-4 pt-[1rem]">
 	<div class="absolute z-0 top-5 h-[100dvh] gradient-mask-t-70 w-screen">
 		<div class="gradient-mask-b-70 w-full h-full">
 			<div
@@ -99,7 +102,7 @@
 		</div>
 	</div>
 	<div
-		class="relative z-1  py-[3rem] w-full min-h-[30dvh] flex lg:flex-row gap-10 flex-col justify-between items-center"
+		class="relative z-1 py-[3rem] w-full min-h-[30dvh] flex lg:flex-row gap-10 flex-col justify-between items-center"
 	>
 		<div class="lg:w-1/2 w-full flex flex-col gap-9">
 			<h3 class="w-full">
@@ -199,8 +202,11 @@
 	</Accordion.Root>
 </faq>
 
-<section id="contact" class="w-full min-h-[100dvh] flex flex-col items-center relative justify-between">
-	<div class="flex-1 w-screen h-full  absolute z-0">
+<section
+	id="contact"
+	class="w-full min-h-[100dvh] flex flex-col items-center relative justify-between"
+>
+	<div class="flex-1 w-screen h-full absolute z-0">
 		<div class=" glowbg h-full w-full"></div>
 	</div>
 	<div
@@ -218,9 +224,11 @@
 		<Form data={data.form} />
 	</div>
 	<div class="relative w-screen h-full bg-[#0e0e10]">
-		<div class="absolute z-0 gradient-mask-l-30  w-full h-full">
+		<div class="absolute z-0 gradient-mask-l-30 w-full h-full">
 			<div class="h-full w-full gradient-mask-r-30">
-				<div class="h-full w-full bg-[url('$lib/bg.svg')] border-t-[0.5px] border-[#e7e7e767]"></div>
+				<div
+					class="h-full w-full bg-[url('$lib/bg.svg')] border-t-[0.5px] border-[#e7e7e767]"
+				></div>
 			</div>
 		</div>
 		<footer

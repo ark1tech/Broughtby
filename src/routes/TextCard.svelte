@@ -3,12 +3,20 @@
 
 	export let heading;
 	export let content;
+	export let src;
 </script>
 
-<div class ="flex-[1_1_0%]">
-	<div class="w-full h-full rounded-[0.75rem] overflow-clip bg-gradient-to-b from-[#ffffff2c] via-[#a2a2a220] to-[#a2a2a200] p-[0.065rem]">
-		<div class="w-full h-full p-10 flex flex-col gap-[1rem] bg-[#19191b] hover:bg-[#202023]  ease-linear transition-all rounded-[0.75rem]">
-			<h4 class = "w-full h-1/3">{heading}</h4>
+<div class="flex-[1_1_0%]">
+	<div
+		class="w-full h-full rounded-[0.75rem] overflow-clip bg-gradient-to-b from-[#ffffff2c] via-[#a2a2a220] to-[#a2a2a200] p-[0.065rem]"
+	>
+		<div
+			class="highsvg relative justify-start w-full h-full p-10 flex flex-col gap-[1rem] bg-[#19191b] hover:bg-[#202023] ease-linear transition-all rounded-[0.75rem]"
+		>
+			<img {src} class="h-auto min-w-[50px] w-[100px]  top-0 left-4" alt="" />
+			<div class = "h-[20%] flex flex-col justify-end">
+				<h4 class="w-full">{heading}</h4>
+			</div>
 			<p class="w-full">{content}</p>
 		</div>
 	</div>
