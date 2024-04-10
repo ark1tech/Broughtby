@@ -85,7 +85,7 @@
 	</h2>
 </section>
 
-<section class="w-full min-h-[100dvh] flex flex-col items-center relative gap-0">
+<section class="w-full min-h-[100dvh] flex flex-col items-center relative gap-4">
 	<div class="absolute z-0 top-5 h-[100dvh] gradient-mask-t-70 w-screen">
 		<div class="gradient-mask-b-70 w-full h-full">
 			<div
@@ -99,7 +99,7 @@
 		</div>
 	</div>
 	<div
-		class="relative z-1 px-[10dvw] py-[3rem] w-full min-h-[30dvh] flex lg:flex-row gap-10 flex-col justify-between items-center"
+		class="relative z-1  py-[3rem] w-full min-h-[30dvh] flex lg:flex-row gap-10 flex-col justify-between items-center"
 	>
 		<div class="lg:w-1/2 w-full flex flex-col gap-9">
 			<h3 class="w-full">
@@ -113,7 +113,7 @@
 		<div></div>
 	</div>
 	<div
-		class="relative z-1 px-[10dvw] py-[3rem] w-full min-h-[30dvh] flex lg:flex-row gap-10 flex-col justify-between items-center"
+		class="relative z-1 py-[3rem] w-full min-h-[30dvh] flex lg:flex-row gap-10 flex-col justify-between items-center"
 	>
 		<div class="lg:w-1/2 w-full flex flex-col gap-9">
 			<h3 class="w-full">
@@ -204,7 +204,7 @@
 		<div class=" glowbg h-full w-full"></div>
 	</div>
 	<div
-		class="relative z-1 pt-[11rem] pb-[3rem] px-[10dvw] w-full flex lg:flex-row gap-10 flex-col justify-between"
+		class="relative z-1 pt-[11rem] pb-[3rem] w-full flex lg:flex-row gap-10 flex-col justify-between"
 	>
 		<div class="lg:w-[50%] w-full flex flex-col gap-9">
 			<h2 class="text-white w-full text-left">
