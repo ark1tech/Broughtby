@@ -47,7 +47,8 @@
 	<meta name="twitter:card" content="../lib/meta.png" />
 </svelte:head>
 
-<header id="home"
+<header
+	id="home"
 	class="flex flex-col items-center justify-between gap-[3rem] pt-[8rem] min-h-[100dvh] w-full"
 >
 	<div class="flex flex-col items-center gap-[2rem] w-full">
@@ -72,7 +73,7 @@
 	<div class="flex flex-grow lg:flex-row flex-col w-full justify-evenly gap-[2rem]">
 		<TextCard
 			src={Receipt}
-			heading={'Can\'t issue official receipts'}
+			heading={"Can't issue official receipts"}
 			content={'Your org needs to be SEC-registered, but that comes with documents and taxes. Too much bureaucracy.'}
 		/>
 		<TextCard
@@ -82,7 +83,7 @@
 		/>
 		<TextCard
 			src={Puzzle}
-			heading={'Can\'t support payment methods'}
+			heading={"Can't support payment methods"}
 			content={"The payments are being sent to some member's bank account, or you're collecting cheques from far-away company offices."}
 		/>
 	</div>
@@ -128,7 +129,7 @@
 			</p>
 		</div>
 	</div>
-	<div
+	<!-- <div
 		class="relative z-1 py-[2rem] w-full min-h-[20dvh] flex lg:flex-col gap-10 flex-col justify-between items-center"
 	>
 		<div class="lg:w-3/4 w-full flex flex-col gap-6">
@@ -151,7 +152,7 @@
 				Connect your socials to show your reach and engagement. Prove your event was worth sponsoring so they come back next year.
 			</p>
 		</div>
-	</div>
+	</div> -->
 </section>
 
 <faq id="faq" class="w-full flex flex-col items-center pt-[11rem] min-h-[100dvh] gap-[2rem]">
@@ -175,8 +176,8 @@
 			>
 			<Accordion.Content
 				><p class="w-fit">
-					Once you are granted access to our platform, you can customize your campaign using 
-					our intuitive drag-and-drop campaign editor. 
+					Once you are granted access to our platform, you can customize your campaign using our
+					intuitive drag-and-drop campaign editor.
 				</p></Accordion.Content
 			>
 		</Accordion.Item>
@@ -202,8 +203,8 @@
 			<Accordion.Content
 				><p class="w-fit">
 					From sponsors, we accept direct bank transfers. For your organization, we can send money
-					through your bank account or e-wallet. We issue official receipts and invoices automatically at
-					no extra charge.
+					through your bank account or e-wallet. We issue official receipts and invoices
+					automatically at no extra charge.
 				</p></Accordion.Content
 			>
 		</Accordion.Item>
@@ -237,8 +238,8 @@
 				Maximize your <span class="text-[#0052FF]">event revenue</span>
 			</h2>
 			<p class="w-full">
-				Be the first in line when we launch Broughtby—the only platform you need to manage
-				sponsor payments and market to your event's full potential.
+				Be the first in line when we launch Broughtby—the only platform you need to manage sponsor
+				payments and market to your event's full potential.
 			</p>
 		</div>
 		<Form data={data.form} />
