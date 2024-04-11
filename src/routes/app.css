@@ -290,7 +290,7 @@ body {
 	.glowbg {
 		background-image: linear-gradient(
 			rgba(0, 0, 0, 0) 0%,
-			rgba(0, 0, 0, 0.104) 10%,
+			rgba(0, 0, 0, 0.104) 15%,
 			rgba(11, 11, 11, 0.384) 80%,
 			rgba(4, 4, 20, 0.605) 100%
 		);
