@@ -11,13 +11,13 @@
 		class="w-full h-full rounded-[0.75rem] overflow-clip bg-gradient-to-b from-[#ffffff2c] via-[#a2a2a220] to-[#a2a2a200] p-[0.065rem]"
 	>
 		<div
-			class=" relative w-full h-full p-10 flex flex-col gap-[1rem] bg-[#19191b] hover:bg-[#202023] ease-linear transition-all rounded-[0.75rem] justify-start"
+			class=" relative w-full h-full p-10 flex flex-col gap-[3rem] bg-[#19191b] hover:bg-[#202023] ease-linear transition-all rounded-[0.75rem] justify-start"
 		>
-			<img {src} class="h-auto min-w-[50px] w-[100px]  top-0 left-4" alt="" />
-			<div class = " h-[20%] flex flex-col justify-start">
+			<img {src} class="h-auto min-w-[20px] lg:w-[20dvh] w-[15dvh]" alt="" />
+			<div class = "w-full flex flex-col justify-center gap-3 items-center">
 				<h4 class="w-full">{heading}</h4>
+				<p class="w-full">{content}</p>
 			</div>
-			<p class="w-full">{content}</p>
 		</div>
 	</div>
 </div>

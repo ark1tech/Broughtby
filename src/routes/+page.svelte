@@ -8,6 +8,7 @@
 	import Connect from '$lib/connect.svg';
 	import Slow from '$lib/zzz.svg';
 	import Puzzle from '$lib/mood-puzzled.svg';
+	import BBStroke from '$lib/broughtby_stroke.svg';
 	import Form from './form.svelte';
 
 	const Right_Arrow = `<svg  xmlns="http://www.w3.org/2000/svg"  width="20"  height="20"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" /></svg>`;
@@ -236,8 +237,9 @@
 	id="contact"
 	class="w-full min-h-[100dvh] flex flex-col items-center relative justify-between"
 >
-	<div class="flex-1 w-screen h-full absolute z-0">
-		<div class=" glowbg h-full w-full"></div>
+	<div class="flex-1 w-screen h-full absolute z-0 overflow-clip">
+		<img src={BBStroke} alt="" class="absolute h-auto lg:w-[50dvw] w-[100dvw] left-[5dvw]" />
+		<div class="glowbg h-full w-full"></div>
 	</div>
 	<div
 		class="relative z-1 pt-[11rem] pb-[3rem] w-full flex lg:flex-row gap-10 flex-col justify-between"
