@@ -71,7 +71,7 @@
 <section
 	class="w-full min-h-[90dvh] flex flex-col items-center pt-[5rem] gap-[3rem] justify-between"
 >
-	<h2 class="text-white md:w-[60%] w-[80%] text-center">Your persistent problems...</h2>
+	<h2 class="text-white md:w-[60%] w-[80%] text-center">Your sponsor payments...</h2>
 	<div class="flex flex-grow lg:flex-row flex-col w-full justify-evenly gap-[2rem]">
 		<TextCard
 			src={Receipt}
@@ -93,7 +93,7 @@
 		<img alt="" src={Connect} class="h-auto w-[20px] my-[-1rem]" />
 	</div>
 	<h2 class="text-white w-full text-center">
-		now have snazzy <span class="text-[#0052FF]">solutions</span>
+		now have a simple <span class="text-[#0052FF]">solution</span>
 	</h2>
 </section>
 <section class="w-full min-h-[100dvh] flex flex-col items-center relative gap-4 justify-start">
@@ -175,7 +175,7 @@
 			>
 			<Accordion.Content
 				><p class="w-fit">
-					Yes, Broughtby is free to setup and use. However, we charge a 7% processing fee on
+					Yes, Broughtby is free to setup and use. However, we charge a processing fee by percent on
 					transactions made on our platform.
 				</p></Accordion.Content
 			>
