@@ -1,6 +1,8 @@
 <script>
 	import NavBar from './NavBar.svelte';
 	import './app.css';
+
+	import { Toaster } from "$lib/components/ui/sonner";
 </script>
 
 <div class="w-full flex flex-col items-center">
@@ -11,6 +13,7 @@
 			<NavBar />
 		</navbar>
 		<main class="w-full">
+			<Toaster />
 			<slot />
 		</main>
 	</div>

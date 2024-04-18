@@ -10,6 +10,8 @@ export const load: PageServerLoad = async () => {
 	};
 };
 
+const FORMSPARK_ACTION_URL = import.meta.env.VITE_FORMSPARK_ACTION_URL;
+
 export const actions: Actions = {
 	default: async (event) => {
 		const form = await superValidate(event, zod(formSchema));
@@ -18,6 +20,25 @@ export const actions: Actions = {
 				form
 			});
 		}
+
+		try {
+			await fetch(FORMSPARK_ACTION_URL, {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+					"Accept": "application/json",
+				}, 
+				body: JSON.stringify(
+						form.data,
+					),
+				}
+			);
+
+			form.valid = true;
+		} catch{
+			form.valid = false;
+		} 
+
 		return {
 			form
 		};
