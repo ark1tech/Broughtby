@@ -26,7 +26,7 @@
 </script>
 
 <div
-	class="lg:w-[45%] h-full rounded-[0.75rem] overflow-clip bg-gradient-to-b from-[#ffffff2c] via-[#a2a2a220] to-[#a2a2a200] p-[0.065rem]"
+	class="lg:w-[43%] h-full rounded-[0.75rem] overflow-clip bg-gradient-to-b from-[#ffffff2c] via-[#a2a2a220] to-[#a2a2a200] p-[0.065rem]"
 >
 	<div class="w-full h-full p-10 flex flex-col gap-[1rem] bg-[#19191b] hover:bg-[#202023]  ease-linear transition-all rounded-[0.75rem]">
 		<form method="POST" use:enhance class=" flex flex-col gap-6">
@@ -70,7 +70,9 @@
 					</Form.Field>
 				</div>
 			</div>
-			<Form.Button></Form.Button>
+			<div class = "flex flex-col items-end">
+				<Form.Button></Form.Button>
+			<div>
 		</form>
 	</div>
 </div>
